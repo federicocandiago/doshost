@@ -1,6 +1,5 @@
 <footer class="site-footer small text-secondary">
-    <div class="container d-flex flex-column flex-md-row gap-2 justify-content-between">
-        <div>&copy; <?= date('Y') ?> <?= e(env('APP_NAME')) ?></div>
+    <div class="container d-flex flex-column flex-md-row gap-2 justify-content-md-end">
         <nav class="d-flex flex-wrap gap-3">
             <a href="<?= base_url() ?>/about"><?= e(__('About')) ?></a>
             <a href="<?= base_url() ?>/terms"><?= e(__('Terms of Service')) ?></a>

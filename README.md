@@ -1,119 +1,125 @@
 # DOSHost
 
-Hosting self-hosted di macchine DOS nel browser: PHP 8 + MySQL, Bootstrap, `fetch`,
-DOSBox via [js-dos](https://js-dos.com) (WebAssembly, servito in locale). Nessuna dipendenza Composer/npm a runtime.
+Self-hosted DOS machines in the browser: PHP 8 + MySQL, Bootstrap, `fetch`,
+DOSBox through [js-dos](https://js-dos.com) (WebAssembly, served locally). No Composer/npm dependencies at runtime.
 
-## Avvio rapido
+## Quick start
 
 ```bash
-cp .env.example .env        # poi modifica DB_* e ADMIN_*
-php bin/migrate.php         # facoltativo: il sito crea tabelle e admin da solo alla prima visita
+cp .env.example .env        # then edit DB_* and ADMIN_*
+php bin/migrate.php         # optional: the site creates the tables and the admin on its first visit
 ./serve.sh                  # http://localhost:8000
 ```
 
-`php bin/migrate.php --fresh` cancella tutte le tabelle e rifà le migrazioni.
-Se MySQL non risponde, sia lo script sia il sito mostrano un messaggio chiaro (`DatabaseException`).
+`php bin/migrate.php --fresh` drops every table and runs the migrations again.
+If MySQL does not answer, both the script and the site show a clear message (`DatabaseException`).
 
-## Struttura
+## Structure
 
 ```
 app/Core/         mini framework: Env, Database, Router, Request, Response, View,
                   Session, Auth, Csrf, Middleware, Translator, Migrator
-app/Models/       User, Instance, Setting (active record minimale)
-app/Services/     DiskService (dischi .jsdos), AvatarService (immagini profilo)
+app/Models/       User, Instance, Setting (minimal active record)
+app/Services/     DiskService (.jsdos disks), AvatarService (profile pictures)
 app/Controllers/  Home, Page, Auth, Dashboard, Instance, Account, Admin
-routes/web.php    tutte le rotte con i loro middleware (auth, guest, admin)
-views/            layouts/, components/, pages/   (PHP puro, stile Blade-like)
+routes/web.php    every route with its middleware (auth, guest, admin)
+views/            layouts/, components/, pages/   (plain PHP, Blade-like)
 lang/             messages.pot + {en,it}/LC_MESSAGES/messages.po
 database/migrations/
 public/           index.php, assets/, vendor/ (bootstrap, js-dos)
 storage/          disks/{uuid}/bundle.jsdos, avatars/, logs/
 ```
 
-Una pagina: `return view('pages/dashboard', [...])`. Un componente: `<?= component('instance-card', [...]) ?>`.
-I form con `data-ajax` vengono inviati con `fetch` e ricevono `{ok, message, errors, redirect}`;
-i bottoni con `data-confirm` + `data-action` passano dalla modale di conferma.
+A page: `return view('pages/dashboard', [...])`. A component: `<?= component('instance-card', [...]) ?>`.
+Forms with `data-ajax` are sent with `fetch` and receive `{ok, message, errors, redirect}`;
+buttons with `data-confirm` + `data-action` go through the confirmation modal.
 
-## Come funziona il disco
+## How the disk works
 
-Ogni istanza è un bundle js-dos (`storage/disks/{uuid}/bundle.jsdos`): zip con `.jsdos/dosbox.conf`
-più tutto il contenuto di `C:`. Gli zip caricati alla creazione vengono estratti in `C:`.
-Il browser invia l'intero disco ogni `AUTOSAVE_MINUTES`, con «Salva», quando la scheda viene nascosta
-e con «Salva ed esci» (un hash evita upload inutili). Il file precedente resta in `bundle.jsdos.bak`.
+Each instance is a js-dos bundle (`storage/disks/{uuid}/bundle.jsdos`): a zip with `.jsdos/dosbox.conf`
+plus the whole content of `C:`. Zip files uploaded at creation, or later with the file icon, are extracted
+into `C:` without ever overwriting files that are already there.
+The browser sends the whole disk every `AUTOSAVE_MINUTES`, on «Save», when the tab gets hidden,
+on «Save & exit» and when DOS `EXIT` is typed (a hash avoids useless uploads). The previous file is kept
+as `bundle.jsdos.bak`. If `C:\AUTOEXEC.BAT` exists, the instance runs it at every start.
 
-Il peso dell'istanza è la dimensione del disco compresso: oltre `DISK_WARN_PERCENT` compare un avviso,
-oltre `DISK_MAX_MB` il salvataggio viene rifiutato finché non si cancellano dati.
-La memoria RAM dell'emulatore non viene salvata: si conserva il disco, non lo stato del programma in esecuzione.
+The size of an instance is the size of its compressed disk: above `DISK_WARN_PERCENT` a warning appears,
+above `DISK_MAX_MB` saving is refused until some data is deleted.
+The emulator's RAM is not saved: the disk is kept, not the state of the running program.
 
-## Traduzioni
+## Translations
 
-Le stringhe sono in inglese nel codice: `__('Hello, :name', ['name' => $n])`.
+Strings are in English in the code: `__('Hello, :name', ['name' => $n])`.
 
 ```bash
-php bin/i18n.php   # rigenera lang/messages.pot e aggiunge le stringhe nuove ai .po
+php bin/i18n.php   # regenerates lang/messages.pot and adds the new strings to the .po files
 ```
 
-I `.po` si modificano con un editor o con Poedit, e non serve compilarli in `.mo`.
+The `.po` files can be edited with any editor or with Poedit; there is no need to compile them to `.mo`.
 
-## Hosting condiviso (Apache + PHP + MySQL)
+## Shared hosting (Apache + PHP + MySQL)
 
-Requisiti: **PHP 8.1+** con le estensioni `pdo_mysql`, `zip`, `gd`, `mbstring`; MySQL 5.7+ / MariaDB 10.3+;
-Apache con `mod_rewrite`. Funziona nella radice di un dominio (`https://dos.tuodominio.it`) o in una
-sottocartella (`https://tuodominio.it/doshost`): il percorso viene preso da `APP_URL`.
+Requirements: **PHP 8.1+** with the `pdo_mysql`, `zip`, `gd`, `mbstring` extensions; MySQL 5.7+ / MariaDB 10.3+;
+Apache with `mod_rewrite`. It works in the root of a domain (`https://dos.example.com`) or in a
+subfolder (`https://example.com/doshost`): the path is taken from `APP_URL`.
 
-1. **Carica i file** (FTP o file manager) mantenendo la struttura del progetto.
-2. **Cartella pubblica** — in ordine di sicurezza:
-   - *progetto fuori dalla cartella web* (es. Tophost, cPanel): il progetto va nella home, accanto
-     alla cartella web, e nella cartella web va **solo il contenuto di `public/`**.
-     `index.php` trova da solo il progetto in `../doshost`:
+1. **Upload the files** (FTP or file manager), keeping the project structure.
+2. **Public folder** — from the safest option:
+   - *project outside the web folder* (e.g. Tophost, cPanel): the project goes in your home, next to the
+     web folder, and the web folder gets **only the content of `public/`**.
+     `index.php` finds the project in `../doshost` by itself:
      ```
      home/
-       doshost/     ← progetto completo (app, storage, .env…): nessun URL
-       htdocs/      ← contenuto di doshost/public (index.php, assets, vendor, .htaccess, .user.ini)
+       doshost/     ← whole project (app, storage, .env…): no URL
+       htdocs/      ← content of doshost/public (index.php, assets, vendor, .htaccess, .user.ini)
      ```
-   - *document root su `public/`*, se il pannello lo permette;
-   - *ultima scelta*: progetto intero nella cartella web; il `.htaccess` in radice inoltra
-     ogni richiesta a `public/` e blocca `.env`, `app/`, `storage/`, ecc.
+   - *document root set to `public/`*, if your control panel allows it;
+   - *last resort*: the whole project inside the web folder; the `.htaccess` in the project root sends
+     every request to `public/`, and the private folders have their own deny-all `.htaccess`.
 
-   I dati (dischi, avatar, log) stanno in `storage/` del progetto; con `STORAGE_PATH` nel `.env`
-   puoi spostarli altrove, con percorso assoluto o relativo al progetto (es. `../doshost-data`).
-   Non devono mai stare dentro la cartella web.
-3. **Database** — crea database e utente dal pannello e scrivili nel `.env`. Non serve altro:
-   alla **prima visita** il sito crea da solo le tabelle (da `database/migrations/*.sql`) e l'admin
-   indicato in `ADMIN_EMAIL` / `ADMIN_PASSWORD`. Con SSH puoi farlo anche con `php bin/migrate.php`;
-   in alternativa il file `.sql` si può importare così com'è da phpMyAdmin.
-4. **`.env`** — copia `.env.example` in `.env` e imposta almeno: `APP_URL` (con https), `APP_DEBUG=false`,
+   Data (disks, avatars, logs) lives in the project's `storage/`; with `STORAGE_PATH` in `.env`
+   you can move it elsewhere, with an absolute path or one relative to the project (e.g. `../doshost-data`).
+   It must never be inside the web folder.
+3. **Database** — create the database and its user from the control panel and write them in `.env`. Nothing else:
+   on the **first visit** the site creates the tables (from `database/migrations/*.sql`) and the admin
+   set in `ADMIN_EMAIL` / `ADMIN_PASSWORD`. With SSH you can also run `php bin/migrate.php`;
+   otherwise the `.sql` file can be imported as it is with phpMyAdmin.
+4. **`.env`** — copy `.env.example` to `.env` and set at least: `APP_URL` (with https), `APP_DEBUG=false`,
    `DB_*`, `ADMIN_*`, `LEGAL_*`.
-5. **Permessi** — `storage/disks`, `storage/avatars` e `storage/logs` devono essere scrivibili da PHP (di solito 755 o 775).
-6. **Limiti di upload** — `public/.user.ini` alza `post_max_size` / `upload_max_filesize` a 80M (valido con PHP-FPM/CGI);
-   se l'hosting usa un altro sistema, imposta valori più alti di `DISK_MAX_MB` dal pannello PHP.
-7. **HTTPS** attivo (Let's Encrypt dal pannello): serve al cookie di sessione e a ciò che dichiarano le policy.
+5. **Permissions** — `storage/disks`, `storage/avatars` and `storage/logs` must be writable by PHP (usually 755 or 775).
+6. **Upload limits** — `public/.user.ini` raises `post_max_size` / `upload_max_filesize` to 80M (works with PHP-FPM/CGI);
+   if your host uses something else, set values higher than `DISK_MAX_MB` from its PHP settings.
+7. **HTTPS** on (Let's Encrypt from the control panel): the session cookie and the policies rely on it.
 
-Verifica: apri `https://tuodominio/` (home), `https://tuodominio/.env` e `https://tuodominio/storage/logs/app.log` (devono dare 404/403)
-e `https://tuodominio/vendor/js-dos/emulators/wdosbox.wasm` (deve scaricarsi come `application/wasm`).
+Check: open `https://yourdomain/` (home), `https://yourdomain/.env` and `https://yourdomain/storage/logs/app.log`
+(they must answer 404/403) and `https://yourdomain/vendor/js-dos/emulators/wdosbox.wasm` (it must download as `application/wasm`).
 
-Se qualcosa non va:
-- **errore 500 subito**: alcuni hosting non permettono `Options` nei `.htaccess` → togli le righe `Options -Indexes`;
-  se ancora 500, togli il commento a `RewriteBase` nei due `.htaccess` (radice del progetto e `public/`);
-- **pagine 404 ma la home si vede**: controlla che `APP_URL` corrisponda esattamente all'indirizzo (con la sottocartella);
-- **pagina bianca o errore PHP**: con `APP_DEBUG=true` l'errore viene mostrato; serve PHP 8.1 o superiore;
-- **file `.htaccess` mancanti**: molti client FTP non mostrano i file che iniziano con il punto: verificali dal file manager.
+If something goes wrong:
+- **error 500 right away**: some hosts don't allow `Options` in `.htaccess` → remove the `Options -Indexes` lines;
+  if it is still 500, uncomment `RewriteBase` in the two `.htaccess` files (project root and `public/`);
+- **404 pages while the home page works**: check that `APP_URL` matches the address exactly (subfolder included);
+- **blank page or PHP error**: with `APP_DEBUG=true` the error is shown; PHP 8.1 or later is required;
+- **missing `.htaccess` files**: many FTP clients hide files starting with a dot: check them from the file manager.
 
-Per aggiornare: carica i file nuovi senza toccare `.env` e `storage/`. Le modifiche al database vanno in
-nuovi file `database/migrations/AAAA_MM_GG_NNNNNN_descrizione.sql`: il sito li applica da solo, una volta
-ciascuno, alla prima richiesta che trova una tabella o una colonna mancante (o con `php bin/migrate.php`).
+To update: upload the new files without touching `.env` and `storage/`. Database changes go in
+new `database/migrations/YYYY_MM_DD_NNNNNN_description.sql` files: the site applies them by itself, once
+each, on the first request that finds a missing table or column (or run `php bin/migrate.php`).
 
-## Produzione
+## Production
 
-- Punta il document root su `public/` (c'è `.htaccess` per Apache; con nginx usa `try_files $uri /index.php`).
-  Senza accesso al document root vedi «Hosting condiviso» sopra.
-- Servi i `.wasm` come `application/wasm`.
-- Alza `post_max_size` / `upload_max_filesize` oltre `DISK_MAX_MB` (vedi `public/.user.ini`).
-- `APP_DEBUG=false`, HTTPS, e rendi scrivibile `storage/`.
+- Point the document root to `public/` (there is an `.htaccess` for Apache; with nginx use `try_files $uri /index.php`).
+  Without access to the document root, see «Shared hosting» above.
+- Serve `.wasm` files as `application/wasm`.
+- Raise `post_max_size` / `upload_max_filesize` above `DISK_MAX_MB` (see `public/.user.ini`).
+- `APP_DEBUG=false`, HTTPS, and make `storage/` writable.
 
-## Librerie incluse
+## Bundled libraries
 
-Servite in locale da `public/vendor/`, senza CDN:
+Served locally from `public/vendor/`, no CDN:
 
-- [js-dos](https://js-dos.com) 8.4.1 (DOSBox / DOSBox-X compilati in WebAssembly) — GPL-2.0
+- [js-dos](https://js-dos.com) 8.4.1 (DOSBox / DOSBox-X compiled to WebAssembly) — GPL-2.0
 - [Bootstrap](https://getbootstrap.com) 5.3.3 — MIT
+
+## License
+
+[MIT](LICENSE). The bundled libraries keep their own licenses (see above).
