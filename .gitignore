@@ -1,0 +1,8 @@
+.env
+/storage/disks/*
+!/storage/disks/.gitkeep
+/storage/logs/*
+!/storage/logs/.gitkeep
+.DS_Store
+/storage/avatars/*
+!/storage/avatars/.gitkeep

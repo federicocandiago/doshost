@@ -1,0 +1,1245 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DOSHost\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/Controllers/InstanceController.php:159
+msgid "1 already on the disk, left untouched."
+msgstr "1 già presente sul disco, lasciato invariato."
+
+#: app/Controllers/InstanceController.php:155
+msgid "1 file added to C:."
+msgstr "1 file aggiunto a C:."
+
+#: views/pages/admin/index.php:42
+msgid "1 instance"
+msgstr "1 istanza"
+
+#: app/Models/Instance.php:24
+msgid "286 (slow)"
+msgstr "286 (lento)"
+
+#: app/Models/Instance.php:25
+msgid "386"
+msgstr "386"
+
+#: app/Models/Instance.php:26
+msgid "486"
+msgstr "486"
+
+#: views/pages/legal/about.php:4
+msgid ":app is a small self-hosted platform. Every instance is a DOSBox machine compiled to WebAssembly (js-dos) that runs inside your browser: the server only stores your disk."
+msgstr ":app è una piccola piattaforma self-hosted. Ogni istanza è una macchina DOSBox compilata in WebAssembly (js-dos) che gira nel tuo browser: il server conserva solo il tuo disco."
+
+#: views/pages/legal/terms.php:6
+msgid ":app lets you create virtual DOS machines that run in your browser, with a persistent disk stored on our server."
+msgstr ":app ti permette di creare macchine DOS virtuali che girano nel browser, con un disco persistente salvato sul nostro server."
+
+#: views/pages/legal/cookies.php:10
+msgid ":app uses only the cookies and browser storage strictly necessary to work. We do not use analytics, advertising, profiling or social media cookies, and no third party places cookies through our site. For this reason no consent banner is shown."
+msgstr ":app usa solo i cookie e la memoria del browser strettamente necessari al funzionamento. Non usiamo cookie analitici, pubblicitari, di profilazione o dei social network, e nessuna terza parte installa cookie tramite il nostro sito. Per questo non viene mostrato alcun banner di consenso."
+
+#: app/Controllers/InstanceController.php:160
+msgid ":n already on the disk, left untouched."
+msgstr ":n già presenti sul disco, lasciati invariati."
+
+#: views/components/quota.php:9
+msgid ":n available"
+msgstr ":n disponibili"
+
+#: views/pages/admin/index.php:44
+msgid ":n disk alerts"
+msgstr ":n avvisi disco"
+
+#: app/Controllers/InstanceController.php:156
+msgid ":n files added to C:."
+msgstr ":n file aggiunti a C:."
+
+#: views/pages/admin/index.php:42
+msgid ":n instances"
+msgstr ":n istanze"
+
+#: views/components/quota.php:8
+msgid ":used of :limit instances in use"
+msgstr ":used di :limit istanze in uso"
+
+#: app/Controllers/PageController.php:32 views/components/footer.php:5 views/pages/legal/about.php:2
+msgid "About"
+msgstr "Info"
+
+#: views/pages/legal/terms.php:11
+msgid "Acceptable use"
+msgstr "Uso consentito"
+
+#: views/pages/legal/privacy.php:75
+msgid "Access"
+msgstr "Accesso"
+
+#: app/Core/App.php:84
+msgid "Access denied"
+msgstr "Accesso negato"
+
+#: views/pages/legal/privacy.php:23
+msgid "Account data"
+msgstr "Dati dell'account"
+
+#: app/Core/Middleware.php:32 app/Core/Middleware.php:33
+msgid "Account suspended"
+msgstr "Account sospeso"
+
+#: views/pages/legal/privacy.php:65
+msgid "Account, profile and service data: as long as your account exists. When you delete your account (or an administrator deletes it), your data, profile picture and all disks are deleted immediately."
+msgstr "Dati di account, profilo e servizio: finché il tuo account esiste. Quando elimini l'account (o lo elimina un amministratore), i tuoi dati, l'immagine del profilo e tutti i dischi vengono cancellati immediatamente."
+
+#: views/components/status-badge.php:4
+msgid "Active"
+msgstr "Attivo"
+
+#: views/pages/legal/privacy.php:26
+msgid "Activity data"
+msgstr "Dati di attività"
+
+#: views/pages/dashboard.php:175
+msgid "Add files"
+msgstr "Aggiungi file"
+
+#: views/components/instance-card.php:45 views/pages/dashboard.php:160
+msgid "Add files to C:"
+msgstr "Aggiungi file a C:"
+
+#: views/components/instance-card.php:12 views/components/instance-card.php:13
+msgid "Add to favourites"
+msgstr "Aggiungi ai preferiti"
+
+#: views/pages/admin/index.php:61
+msgid "Admin"
+msgstr "Admin"
+
+#: views/pages/auth/register.php:39
+msgid "Already registered?"
+msgstr "Hai già un account?"
+
+#: views/pages/legal/privacy.php:55
+msgid "Any provider hosting our servers, acting as data processor under a contract pursuant to Article 28 GDPR."
+msgstr "L'eventuale fornitore che ospita i nostri server, in qualità di responsabile del trattamento nominato con contratto ai sensi dell'articolo 28 GDPR."
+
+#: views/components/confirm-modal.php:6
+msgid "Are you sure?"
+msgstr "Sei sicuro?"
+
+#: views/pages/legal/privacy.php:78
+msgid "ask us to limit the processing in the cases provided by Article 18;"
+msgstr "chiedere di limitare il trattamento nei casi previsti dall'articolo 18;"
+
+#: views/pages/auth/register.php:7 views/pages/account.php:72
+msgid "At least 8 characters."
+msgstr "Almeno 8 caratteri."
+
+#: app/Models/Instance.php:23
+msgid "Automatic"
+msgstr "Automatica"
+
+#: views/pages/admin/index.php:133
+msgid "Automatic save"
+msgstr "Salvataggio automatico"
+
+#: views/pages/errors/error.php:4
+msgid "Back to home"
+msgstr "Torna alla home"
+
+#: views/pages/stop.php:11
+msgid "Back to my instances"
+msgstr "Torna alle mie istanze"
+
+#: app/Controllers/AdminController.php:33 views/components/navbar.php:13 views/components/navbar.php:23 views/pages/admin/index.php:2
+msgid "Back-office"
+msgstr "Back-office"
+
+#: views/components/instance-card.php:43 views/pages/home.php:26
+msgid "Boot"
+msgstr "Avvia"
+
+#: app/Controllers/InstanceController.php:212 views/pages/play.php:4
+msgid "Booting…"
+msgstr "Avvio in corso…"
+
+#: views/pages/legal/about.php:8
+msgid "Built with PHP, MySQL, Bootstrap and js-dos (DOSBox)."
+msgstr "Realizzato con PHP, MySQL, Bootstrap e js-dos (DOSBox)."
+
+#: views/components/confirm-modal.php:11 views/pages/dashboard.php:90 views/pages/dashboard.php:148 views/pages/dashboard.php:174
+msgid "Cancel"
+msgstr "Annulla"
+
+#: views/pages/account.php:66 views/pages/account.php:75
+msgid "Change password"
+msgstr "Cambia password"
+
+#: views/pages/legal/privacy.php:92
+msgid "Changes to this policy"
+msgstr "Modifiche a questa informativa"
+
+#: app/Controllers/InstanceController.php:137
+msgid "Choose at least one .zip file."
+msgstr "Scegli almeno un file .zip."
+
+#: app/Controllers/InstanceController.php:220
+msgid "Click or press a key to go full screen"
+msgstr "Clicca o premi un tasto per lo schermo intero"
+
+#: views/components/flash.php:4 views/components/confirm-modal.php:7 views/pages/dashboard.php:49 views/pages/dashboard.php:103 views/pages/dashboard.php:161
+msgid "Close"
+msgstr "Chiudi"
+
+#: views/pages/legal/privacy.php:40
+msgid "Complying with legal obligations and requests from authorities."
+msgstr "Adempiere a obblighi di legge e a richieste delle autorità."
+
+#: views/pages/account.php:87
+msgid "Confirm with your password"
+msgstr "Conferma con la tua password"
+
+#: views/pages/legal/cookies.php:46
+msgid "Contacts and updates"
+msgstr "Contatti e aggiornamenti"
+
+#: app/Controllers/PageController.php:27 views/components/footer.php:8 views/pages/legal/cookies.php:7
+msgid "Cookie Policy"
+msgstr "Cookie policy"
+
+#: views/pages/legal/cookies.php:13
+msgid "Cookies are small text files that a website stores in your browser and reads back on later visits. Similar technologies, such as the browser's local storage, work in the same way and are covered by this policy too."
+msgstr "I cookie sono piccoli file di testo che un sito memorizza nel tuo browser e rilegge nelle visite successive. Tecnologie simili, come la memoria locale del browser, funzionano allo stesso modo e sono anch'esse oggetto di questa policy."
+
+#: views/pages/legal/cookies.php:15
+msgid "Cookies we use"
+msgstr "Cookie che utilizziamo"
+
+#: views/pages/legal/privacy.php:76
+msgid "correct inaccurate data (you can change your name and preferences from \"My account\");"
+msgstr "correggere i dati inesatti (puoi modificare nome e preferenze da \"Il mio account\");"
+
+#: views/pages/dashboard.php:56 views/pages/dashboard.php:118
+msgid "CPU speed"
+msgstr "Velocità CPU"
+
+#: views/pages/dashboard.php:91 views/pages/home.php:22
+msgid "Create"
+msgstr "Crea"
+
+#: app/Controllers/AuthController.php:42 views/components/navbar.php:36 views/pages/auth/register.php:2 views/pages/auth/register.php:36 views/pages/home.php:12
+msgid "Create account"
+msgstr "Registrati"
+
+#: views/pages/auth/login.php:11
+msgid "Create one"
+msgstr "Creane uno"
+
+#: views/pages/legal/privacy.php:36
+msgid "Creating and managing your account, signing you in, providing the instances and keeping their disks."
+msgstr "Creare e gestire il tuo account, farti accedere, fornirti le istanze e conservarne i dischi."
+
+#: views/pages/legal/about.php:7
+msgid "Credits"
+msgstr "Crediti"
+
+#: views/pages/account.php:70
+msgid "Current password"
+msgstr "Password attuale"
+
+#: views/pages/legal/terms.php:14
+msgid "Data and availability"
+msgstr "Dati e disponibilità"
+
+#: views/pages/legal/privacy.php:13
+msgid "Data controller"
+msgstr "Titolare del trattamento"
+
+#: views/pages/legal/privacy.php:61
+msgid "Data is stored on our own servers, located in :location. The service does not use external content networks, analytics or third-party services. If data is ever transferred outside the European Economic Area, this will only happen on the basis of an adequacy decision or appropriate safeguards such as the Standard Contractual Clauses (Articles 45–46 GDPR)."
+msgstr "I dati sono conservati sui nostri server, situati in :location. Il servizio non utilizza CDN esterne, strumenti di analisi o servizi di terze parti. Se i dati dovessero essere trasferiti fuori dallo Spazio economico europeo, ciò avverrà solo sulla base di una decisione di adeguatezza o di garanzie adeguate come le Clausole contrattuali tipo (articoli 45–46 GDPR)."
+
+#: app/Core/App.php:24
+msgid "Database unavailable"
+msgstr "Database non disponibile"
+
+#: views/pages/legal/privacy.php:26
+msgid "date of registration, last sign-in, last start and last save of each instance, disk usage."
+msgstr "data di registrazione, ultimo accesso, ultimo avvio e ultimo salvataggio di ogni istanza, spazio disco occupato."
+
+#: views/pages/account.php:28
+msgid "Default DOS keyboard"
+msgstr "Tastiera DOS predefinita"
+
+#: views/pages/admin/index.php:124
+msgid "Default limit. Users with a personal limit are not affected."
+msgstr "Limite predefinito. Non si applica agli utenti con un limite personale."
+
+#: views/pages/legal/privacy.php:42
+msgid "Defending our rights in legal proceedings."
+msgstr "Difendere i nostri diritti in sede giudiziaria."
+
+#: views/components/instance-card.php:67 views/components/confirm-modal.php:12 views/pages/admin/index.php:73 views/pages/admin/index.php:101
+msgid "Delete"
+msgstr "Elimina"
+
+#: views/pages/account.php:81
+msgid "Delete account"
+msgstr "Elimina account"
+
+#: views/pages/dashboard.php:147
+msgid "Delete instance"
+msgstr "Elimina istanza"
+
+#: views/pages/account.php:88
+msgid "Delete my account"
+msgstr "Elimina il mio account"
+
+#: views/pages/legal/privacy.php:66
+msgid "Deleted instances: the disk and its previous version are deleted immediately."
+msgstr "Istanze eliminate: il disco e la sua versione precedente vengono cancellati immediatamente."
+
+#: views/pages/dashboard.php:53 views/pages/dashboard.php:112
+msgid "Description (optional)"
+msgstr "Descrizione (facoltativa)"
+
+#: app/Controllers/InstanceController.php:303
+msgid "Disk full (max :size MB): this instance no longer saves. Delete some files to free space."
+msgstr "Disco pieno (max :size MB): questa istanza non salva più. Elimina qualche file per liberare spazio."
+
+#: views/components/instance-card.php:31
+msgid "Disk full: this instance no longer saves. Delete some files inside DOS to free space."
+msgstr "Disco pieno: questa istanza non salva più. Elimina qualche file dentro DOS per liberare spazio."
+
+#: views/pages/admin/index.php:9
+msgid "Disk space used"
+msgstr "Spazio disco usato"
+
+#: views/components/disk-usage.php:3 views/pages/dashboard.php:8 views/pages/admin/index.php:85 views/pages/play.php:11
+msgid "Disk usage"
+msgstr "Spazio disco"
+
+#: views/pages/dashboard.php:65 views/pages/dashboard.php:127 views/pages/auth/register.php:20
+msgid "DOS keyboard"
+msgstr "Tastiera DOS"
+
+#: views/pages/home.php:27
+msgid "DOSBox runs right in your browser, full screen. Nothing to install."
+msgstr "DOSBox gira direttamente nel browser, a tutto schermo. Niente da installare."
+
+#: views/pages/play.php:16
+msgid "Drag your finger to move the pointer, tap to click"
+msgstr "Trascina il dito per muovere il puntatore, tocca per cliccare"
+
+#: views/pages/dashboard.php:167
+msgid "Drop .zip files here or click to choose"
+msgstr "Trascina qui i file .zip o clicca per sceglierli"
+
+#: views/pages/legal/cookies.php:19
+msgid "Duration"
+msgstr "Durata"
+
+#: views/pages/dashboard.php:102
+msgid "Edit instance"
+msgstr "Modifica istanza"
+
+#: views/pages/auth/login.php:5 views/pages/auth/register.php:6 views/pages/legal/privacy.php:17
+msgid "Email"
+msgstr "Email"
+
+#: views/pages/admin/index.php:58
+msgid "Empty = default"
+msgstr "Vuoto = predefinito"
+
+#: views/pages/legal/cookies.php:35
+msgid "Emulator"
+msgstr "Emulatore"
+
+#: app/Controllers/AdminController.php:56 app/Controllers/AdminController.php:81
+msgid "Enter a number between 0 and 1000."
+msgstr "Inserisci un numero tra 0 e 1000."
+
+#: app/Controllers/AdminController.php:59
+msgid "Enter a number of minutes between 1 and 120."
+msgstr "Inserisci un numero di minuti tra 1 e 120."
+
+#: views/pages/legal/privacy.php:77
+msgid "Erasure"
+msgstr "Cancellazione"
+
+#: views/pages/admin/index.php:21
+msgid "Expand / collapse all"
+msgstr "Apri / chiudi tutti"
+
+#: views/pages/play.php:26
+msgid "Extra keys"
+msgstr "Tasti extra"
+
+#: views/pages/dashboard.php:28
+msgid "Favourites"
+msgstr "Preferiti"
+
+#: views/pages/dashboard.php:83
+msgid "Files for C: (optional)"
+msgstr "File per C: (facoltativi)"
+
+#: views/pages/legal/cookies.php:47
+msgid "For any question write to :mail. More information on how we process personal data is available in the <a href=\":privacy\">Privacy Policy</a>. If we ever introduce cookies that need consent, we will update this policy and ask for your consent first."
+msgstr "Per qualsiasi domanda scrivi a :mail. Maggiori informazioni su come trattiamo i dati personali sono nell'<a href=\":privacy\">Informativa sulla privacy</a>. Se in futuro introdurremo cookie che richiedono il consenso, aggiorneremo questa policy e chiederemo prima il tuo consenso."
+
+#: views/pages/play.php:14
+msgid "Full screen"
+msgstr "Schermo intero"
+
+#: views/pages/home.php:8
+msgid "Go to my instances"
+msgstr "Vai alle mie istanze"
+
+#: views/pages/legal/privacy.php:77
+msgid "have your data deleted (you can delete your account yourself from \"My account\");"
+msgstr "ottenere la cancellazione dei dati (puoi eliminare da solo il tuo account da \"Il mio account\");"
+
+#: views/pages/legal/privacy.php:63
+msgid "How long we keep it"
+msgstr "Per quanto tempo li conserviamo"
+
+#: views/pages/legal/about.php:5
+msgid "How saving works"
+msgstr "Come funziona il salvataggio"
+
+#: views/pages/legal/cookies.php:43
+msgid "How to manage cookies"
+msgstr "Come gestire i cookie"
+
+#: views/pages/auth/register.php:32
+msgid "I accept the <a href=\":terms\" target=\"_blank\">Terms of Service</a> and the <a href=\":privacy\" target=\"_blank\">Privacy Policy</a>."
+msgstr "Accetto i <a href=\":terms\" target=\"_blank\">Termini di servizio</a> e l'<a href=\":privacy\" target=\"_blank\">Informativa sulla privacy</a>."
+
+#: views/pages/legal/privacy.php:87
+msgid "In the event of a personal data breach we will notify the supervisory authority and, where required, the people concerned, as provided by Articles 33 and 34 GDPR."
+msgstr "In caso di violazione dei dati personali informeremo l'autorità di controllo e, quando previsto, le persone interessate, come stabilito dagli articoli 33 e 34 GDPR."
+
+#: views/pages/admin/index.php:157
+msgid "Initial values come from .env (DEFAULT_MAX_INSTANCES, AUTOSAVE_MINUTES, REGISTRATION_ENABLED)."
+msgstr "I valori iniziali arrivano dal .env (DEFAULT_MAX_INSTANCES, AUTOSAVE_MINUTES, REGISTRATION_ENABLED)."
+
+#: app/Controllers/InstanceController.php:80
+msgid "Instance \":name\" created."
+msgstr "Istanza \":name\" creata."
+
+#: app/Controllers/InstanceController.php:125
+msgid "Instance \":name\" updated."
+msgstr "Istanza \":name\" aggiornata."
+
+#: views/pages/play.php:3
+msgid "Instance controls"
+msgstr "Controlli istanza"
+
+#: app/Controllers/AdminController.php:132 app/Controllers/InstanceController.php:181
+msgid "Instance deleted."
+msgstr "Istanza eliminata."
+
+#: app/Controllers/InstanceController.php:295 app/Controllers/InstanceController.php:296
+msgid "Instance paused"
+msgstr "Istanza in pausa"
+
+#: app/Controllers/AdminController.php:123
+msgid "Instance paused."
+msgstr "Istanza messa in pausa."
+
+#: app/Controllers/AdminController.php:123
+msgid "Instance reactivated."
+msgstr "Istanza riattivata."
+
+#: views/pages/admin/index.php:7
+msgid "Instances"
+msgstr "Istanze"
+
+#: views/pages/admin/index.php:123
+msgid "Instances per user"
+msgstr "Istanze per utente"
+
+#: views/pages/legal/cookies.php:36
+msgid "Interface"
+msgstr "Interfaccia"
+
+#: app/Controllers/InstanceController.php:43 app/Controllers/InstanceController.php:103
+msgid "Invalid CPU profile."
+msgstr "Profilo CPU non valido."
+
+#: app/Controllers/InstanceController.php:253
+msgid "Invalid disk data."
+msgstr "Dati del disco non validi."
+
+#: app/Controllers/AuthController.php:80 app/Controllers/AccountController.php:42 app/Controllers/InstanceController.php:46 app/Controllers/InstanceController.php:106
+msgid "Invalid keyboard layout."
+msgstr "Layout di tastiera non valido."
+
+#: app/Controllers/AuthController.php:77 app/Controllers/AccountController.php:39
+msgid "Invalid language."
+msgstr "Lingua non valida."
+
+#: views/pages/legal/privacy.php:49
+msgid "Is providing data mandatory?"
+msgstr "Il conferimento dei dati è obbligatorio?"
+
+#: views/pages/account.php:51
+msgid "JPG, PNG, GIF or WebP. It will be cropped to a square."
+msgstr "JPG, PNG, GIF o WebP. Verrà ritagliata in un quadrato."
+
+#: views/pages/legal/cookies.php:35
+msgid "js-dos, the DOS emulator, may keep its display preferences in local storage and temporary copies of your instance in the browser's private storage (OPFS). The temporary copies are cleared every time an instance starts; your disk is always saved on our server."
+msgstr "js-dos, l'emulatore DOS, può conservare le sue preferenze di visualizzazione nella memoria locale e copie temporanee della tua istanza nella memoria privata del browser (OPFS). Le copie temporanee vengono cancellate a ogni avvio di un'istanza; il tuo disco è sempre salvato sul nostro server."
+
+#: views/pages/home.php:30
+msgid "Keep"
+msgstr "Conserva"
+
+#: views/pages/legal/cookies.php:25
+msgid "Keeps you signed in, protects forms against cross-site request forgery, remembers the language you chose and shows confirmation messages."
+msgstr "Mantiene l'accesso, protegge i moduli da attacchi cross-site request forgery, ricorda la lingua scelta e mostra i messaggi di conferma."
+
+#: views/pages/play.php:5
+msgid "Keyboard"
+msgstr "Tastiera"
+
+#: views/components/instance-card.php:27 views/pages/admin/index.php:86
+msgid "Last saved"
+msgstr "Ultimo salvataggio"
+
+#: views/components/instance-card.php:26 views/pages/dashboard.php:8 views/pages/admin/index.php:86
+msgid "Last started"
+msgstr "Ultimo avvio"
+
+#: views/pages/legal/terms.php:3 views/pages/legal/cookies.php:8 views/pages/legal/privacy.php:9
+msgid "Last updated: :date"
+msgstr "Ultimo aggiornamento: :date"
+
+#: views/pages/legal/cookies.php:40 views/pages/legal/privacy.php:34
+msgid "Legal basis"
+msgstr "Base giuridica"
+
+#: views/pages/legal/privacy.php:41
+msgid "Legal obligation (Art. 6(1)(c) GDPR)."
+msgstr "Obbligo di legge (art. 6, par. 1, lett. c GDPR)."
+
+#: views/pages/legal/privacy.php:39
+msgid "Legitimate interest of the controller (Art. 6(1)(f) GDPR) in protecting the service and its users."
+msgstr "Legittimo interesse del titolare (art. 6, par. 1, lett. f GDPR) a proteggere il servizio e i suoi utenti."
+
+#: views/pages/legal/privacy.php:43
+msgid "Legitimate interest of the controller (Art. 6(1)(f) GDPR)."
+msgstr "Legittimo interesse del titolare (art. 6, par. 1, lett. f GDPR)."
+
+#: views/pages/admin/index.php:56
+msgid "Limit"
+msgstr "Limite"
+
+#: app/Models/Instance.php:27
+msgid "Max speed"
+msgstr "Massima velocità"
+
+#: views/pages/play.php:7
+msgid "Menu"
+msgstr "Menu"
+
+#: app/Core/App.php:86
+msgid "Method not allowed"
+msgstr "Metodo non consentito"
+
+#: views/pages/legal/privacy.php:89
+msgid "Minors"
+msgstr "Minori"
+
+#: views/pages/admin/index.php:134
+msgid "Minutes between automatic saves of a running instance. The disk is also saved when the user leaves it."
+msgstr "Minuti tra un salvataggio automatico e l'altro di un'istanza in uso. Il disco viene salvato anche quando l'utente esce."
+
+#: views/pages/play.php:15
+msgid "Mouse cursor"
+msgstr "Cursore del mouse"
+
+#: app/Controllers/AccountController.php:21 views/components/navbar.php:21 views/pages/account.php:6
+msgid "My account"
+msgstr "Il mio account"
+
+#: app/Controllers/DashboardController.php:23 views/components/navbar.php:11 views/pages/dashboard.php:3
+msgid "My instances"
+msgstr "Le mie istanze"
+
+#: views/pages/dashboard.php:8 views/pages/dashboard.php:52 views/pages/dashboard.php:107 views/pages/auth/register.php:5 views/pages/admin/index.php:85 views/pages/account.php:16 views/pages/legal/cookies.php:19
+msgid "Name"
+msgstr "Nome"
+
+#: views/pages/legal/privacy.php:50
+msgid "Name, email address and password are necessary to create an account: without them we cannot provide the service. Profile picture and instance descriptions are optional."
+msgstr "Nome, indirizzo email e password sono necessari per creare un account: senza questi dati non possiamo fornire il servizio. L'immagine del profilo e le descrizioni delle istanze sono facoltative."
+
+#: views/pages/legal/privacy.php:23
+msgid "name, email address and password. The password is never stored in readable form: we only keep a one-way hash of it."
+msgstr "nome, indirizzo email e password. La password non viene mai conservata in chiaro: ne teniamo solo un hash non reversibile."
+
+#: views/components/quota.php:16 views/pages/dashboard.php:48
+msgid "New instance"
+msgstr "Nuova istanza"
+
+#: views/pages/account.php:72
+msgid "New password"
+msgstr "Nuova password"
+
+#: views/components/pagination.php:15
+msgid "Next"
+msgstr "Successiva"
+
+#: views/pages/auth/login.php:11
+msgid "No account yet?"
+msgstr "Non hai un account?"
+
+#: app/Controllers/InstanceController.php:216
+msgid "No changes to save"
+msgstr "Nessuna modifica da salvare"
+
+#: views/pages/admin/index.php:80
+msgid "No instances yet."
+msgstr "Ancora nessuna istanza."
+
+#: views/pages/legal/privacy.php:80
+msgid "object at any time to processing based on our legitimate interest, for reasons related to your particular situation."
+msgstr "opporti in qualsiasi momento ai trattamenti basati sul nostro legittimo interesse, per motivi connessi alla tua situazione particolare."
+
+#: views/pages/legal/privacy.php:80
+msgid "Objection"
+msgstr "Opposizione"
+
+#: views/pages/legal/privacy.php:75
+msgid "obtain confirmation of whether we process your data and a copy of it;"
+msgstr "ottenere conferma che trattiamo i tuoi dati e riceverne una copia;"
+
+#: app/Controllers/InstanceController.php:65 app/Controllers/InstanceController.php:149
+msgid "One of the files is not a valid zip archive."
+msgstr "Uno dei file non è un archivio zip valido."
+
+#: views/pages/dashboard.php:85
+msgid "One or more .zip archives: their content is extracted into C:. Max :size MB in total."
+msgstr "Uno o più archivi .zip: il contenuto viene estratto in C:. Massimo :size MB in totale."
+
+#: app/Controllers/InstanceController.php:275
+msgid "Only .zip files can be uploaded."
+msgstr "Puoi caricare solo file .zip."
+
+#: views/pages/legal/terms.php:12
+msgid "Only upload software you have the right to use. Pirated software, malware and any content that breaks the law are not allowed and will be removed."
+msgstr "Carica solo software che hai il diritto di usare. Software pirata, malware e qualsiasi contenuto illegale non sono ammessi e verranno rimossi."
+
+#: views/pages/admin/index.php:152
+msgid "Open"
+msgstr "Aperta"
+
+#: views/pages/legal/cookies.php:33
+msgid "Other data stored in your browser"
+msgstr "Altri dati salvati nel browser"
+
+#: views/pages/dashboard.php:34
+msgid "Other instances"
+msgstr "Altre istanze"
+
+#: app/Core/App.php:85
+msgid "Page not found"
+msgstr "Pagina non trovata"
+
+#: views/components/pagination.php:9
+msgid "Pages"
+msgstr "Pagine"
+
+#: views/pages/auth/login.php:6 views/pages/auth/register.php:7
+msgid "Password"
+msgstr "Password"
+
+#: app/Controllers/AccountController.php:112
+msgid "Password changed."
+msgstr "Password modificata."
+
+#: views/pages/admin/index.php:70 views/pages/admin/index.php:98
+msgid "Pause"
+msgstr "Metti in pausa"
+
+#: views/components/instance-card.php:17 views/components/instance-card.php:41 views/components/status-badge.php:2 views/pages/admin/index.php:8
+msgid "Paused"
+msgstr "In pausa"
+
+#: views/components/instance-card.php:36
+msgid "Paused by an administrator."
+msgstr "Messa in pausa da un amministratore."
+
+#: views/pages/legal/privacy.php:37
+msgid "Performance of a contract (Art. 6(1)(b) GDPR): the Terms of Service you accept when signing up."
+msgstr "Esecuzione di un contratto (art. 6, par. 1, lett. b GDPR): i Termini di servizio che accetti alla registrazione."
+
+#: views/pages/legal/privacy.php:21
+msgid "Personal data we process"
+msgstr "Dati personali trattati"
+
+#: app/Controllers/AdminController.php:62 app/Controllers/AuthController.php:86 app/Controllers/AccountController.php:45 app/Controllers/AccountController.php:106 app/Controllers/AccountController.php:119 app/Controllers/InstanceController.php:52 app/Controllers/InstanceController.php:60 app/Controllers/InstanceController.php:65 app/Controllers/InstanceController.php:109 app/Controllers/InstanceController.php:139 app/Controllers/InstanceController.php:145 app/Controllers/InstanceController.php:149
+msgid "Please check the form."
+msgstr "Controlla i campi del modulo."
+
+#: app/Controllers/AccountController.php:58
+msgid "Please choose an image."
+msgstr "Scegli un'immagine."
+
+#: app/Controllers/AuthController.php:67
+msgid "Please enter a valid email address."
+msgstr "Inserisci un indirizzo email valido."
+
+#: app/Controllers/AuthController.php:64 app/Controllers/AccountController.php:36
+msgid "Please enter your name."
+msgstr "Inserisci il tuo nome."
+
+#: views/pages/legal/privacy.php:79
+msgid "Portability"
+msgstr "Portabilità"
+
+#: views/components/pagination.php:10
+msgid "Previous"
+msgstr "Precedente"
+
+#: app/Controllers/PageController.php:22 views/components/footer.php:7 views/pages/legal/privacy.php:8
+msgid "Privacy Policy"
+msgstr "Informativa sulla privacy"
+
+#: views/pages/account.php:12
+msgid "Profile"
+msgstr "Profilo"
+
+#: views/pages/legal/privacy.php:24
+msgid "Profile data you choose to provide"
+msgstr "Dati del profilo che scegli di fornire"
+
+#: views/pages/account.php:44 views/pages/account.php:50
+msgid "Profile picture"
+msgstr "Immagine del profilo"
+
+#: views/pages/legal/privacy.php:24
+msgid "profile picture (re-encoded by our system, which removes any embedded metadata such as location), preferred language and DOS keyboard layout."
+msgstr "immagine del profilo (ricodificata dal sistema, che rimuove eventuali metadati come la posizione), lingua preferita e layout di tastiera DOS."
+
+#: app/Controllers/AccountController.php:81
+msgid "Profile picture removed."
+msgstr "Immagine del profilo rimossa."
+
+#: app/Controllers/AccountController.php:73
+msgid "Profile picture updated."
+msgstr "Immagine del profilo aggiornata."
+
+#: app/Controllers/AccountController.php:51
+msgid "Profile updated."
+msgstr "Profilo aggiornato."
+
+#: views/pages/legal/privacy.php:56
+msgid "Public authorities, only when required by law."
+msgstr "Le autorità pubbliche, solo quando previsto dalla legge."
+
+#: views/pages/legal/cookies.php:19 views/pages/legal/privacy.php:34
+msgid "Purpose"
+msgstr "Finalità"
+
+#: views/pages/legal/privacy.php:31
+msgid "Purposes and legal bases"
+msgstr "Finalità e basi giuridiche"
+
+#: app/Controllers/InstanceController.php:213
+msgid "Ready"
+msgstr "Pronto"
+
+#: views/pages/legal/privacy.php:79
+msgid "receive your data in a structured, commonly used, machine-readable format (the disks can also be downloaded as a .jsdos archive from the instance tools);"
+msgstr "ricevere i tuoi dati in un formato strutturato, di uso comune e leggibile da dispositivo automatico (i dischi si possono anche scaricare come archivio .jsdos dagli strumenti dell'istanza);"
+
+#: views/pages/legal/privacy.php:76
+msgid "Rectification"
+msgstr "Rettifica"
+
+#: views/pages/admin/index.php:146
+msgid "Registration"
+msgstr "Registrazione"
+
+#: app/Controllers/AuthController.php:53
+msgid "Registration is currently closed."
+msgstr "Le registrazioni sono chiuse."
+
+#: views/pages/account.php:59
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: views/components/instance-card.php:12 views/components/instance-card.php:13
+msgid "Remove from favourites"
+msgstr "Togli dai preferiti"
+
+#: views/pages/auth/register.php:8 views/pages/account.php:73
+msgid "Repeat password"
+msgstr "Ripeti la password"
+
+#: views/pages/legal/privacy.php:78
+msgid "Restriction"
+msgstr "Limitazione"
+
+#: views/pages/admin/index.php:70 views/pages/admin/index.php:98
+msgid "Resume"
+msgstr "Riattiva"
+
+#: views/pages/errors/database.php:7
+msgid "Retry"
+msgstr "Riprova"
+
+#: views/pages/dashboard.php:149 views/pages/admin/index.php:64 views/pages/account.php:38 views/pages/play.php:13
+msgid "Save"
+msgstr "Salva"
+
+#: views/pages/play.php:18
+msgid "Save & exit"
+msgstr "Salva ed esci"
+
+#: app/Controllers/InstanceController.php:217
+msgid "Save failed!"
+msgstr "Salvataggio non riuscito!"
+
+#: views/pages/admin/index.php:158
+msgid "Save settings"
+msgstr "Salva impostazioni"
+
+#: app/Controllers/InstanceController.php:215
+msgid "Saved at :time"
+msgstr "Salvato alle :time"
+
+#: app/Controllers/InstanceController.php:214
+msgid "Saving disk…"
+msgstr "Salvataggio disco…"
+
+#: views/pages/legal/privacy.php:85
+msgid "Security"
+msgstr "Sicurezza"
+
+#: views/pages/legal/privacy.php:38
+msgid "Security of the service, preventing abuse, enforcing the Terms of Service (e.g. pausing an account or instance)."
+msgstr "Sicurezza del servizio, prevenzione degli abusi, applicazione dei Termini di servizio (ad esempio la sospensione di un account o di un'istanza)."
+
+#: views/pages/legal/privacy.php:69
+msgid "Server backups, if any, are overwritten in the normal backup cycle."
+msgstr "Gli eventuali backup del server vengono sovrascritti nel normale ciclo di backup."
+
+#: views/pages/legal/privacy.php:25
+msgid "Service data"
+msgstr "Dati del servizio"
+
+#: views/pages/legal/privacy.php:68
+msgid "Session data: until you sign out or the browser session ends."
+msgstr "Dati di sessione: fino all'uscita dall'account o alla chiusura del browser."
+
+#: app/Core/App.php:87
+msgid "Session expired"
+msgstr "Sessione scaduta"
+
+#: views/components/instance-card.php:51 views/pages/admin/index.php:118
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: app/Controllers/AdminController.php:69
+msgid "Settings saved."
+msgstr "Impostazioni salvate."
+
+#: views/pages/play.php:17
+msgid "Show or hide the js-dos side bar"
+msgstr "Mostra o nascondi la barra laterale di js-dos"
+
+#: views/pages/play.php:15
+msgid "Show or hide the system mouse cursor over DOS"
+msgstr "Mostra o nascondi il cursore di sistema sopra DOS"
+
+#: views/pages/dashboard.php:76 views/pages/dashboard.php:138
+msgid "Show the system cursor"
+msgstr "Mostra il cursore di sistema"
+
+#: app/Controllers/AuthController.php:19 views/components/navbar.php:34 views/pages/auth/login.php:2 views/pages/auth/login.php:7 views/pages/auth/register.php:39 views/pages/home.php:10
+msgid "Sign in"
+msgstr "Accedi"
+
+#: views/components/navbar.php:28 views/pages/stop.php:9
+msgid "Sign out"
+msgstr "Esci"
+
+#: views/pages/auth/register.php:11 views/pages/account.php:19
+msgid "Site language"
+msgstr "Lingua del sito"
+
+#: views/pages/legal/cookies.php:36
+msgid "some screens remember small interface choices for the current tab only (session storage), for example which panels are open."
+msgstr "alcune schermate ricordano piccole scelte di interfaccia solo per la scheda corrente (session storage), ad esempio quali pannelli sono aperti."
+
+#: app/Core/App.php:88
+msgid "Something went wrong"
+msgstr "Qualcosa è andato storto"
+
+#: views/pages/dashboard.php:6
+msgid "Sort by"
+msgstr "Ordina per"
+
+#: views/pages/dashboard.php:144
+msgid "Speed and keyboard apply from the next boot. Close the instance before changing them."
+msgstr "Velocità e tastiera valgono dal prossimo avvio. Chiudi l'istanza prima di cambiarle."
+
+#: views/pages/home.php:23
+msgid "Spin up your own DOS machines, each with its own C: drive."
+msgstr "Crea le tue macchine DOS, ognuna con il suo disco C:."
+
+#: views/pages/dashboard.php:80 views/pages/dashboard.php:142
+msgid "Start in full screen"
+msgstr "Avvia a schermo intero"
+
+#: views/pages/admin/index.php:85
+msgid "Status"
+msgstr "Stato"
+
+#: views/pages/legal/cookies.php:41
+msgid "Strictly necessary cookies and storage do not require consent under Article 5(3) of Directive 2002/58/EC, Article 122 of the Italian Personal Data Protection Code and the Garante's guidelines on cookies of 10 June 2021. The related processing is based on the performance of the contract (Art. 6(1)(b) GDPR)."
+msgstr "I cookie e la memoria strettamente necessari non richiedono il consenso ai sensi dell'articolo 5, paragrafo 3, della Direttiva 2002/58/CE, dell'articolo 122 del Codice in materia di protezione dei dati personali e delle Linee guida cookie del Garante del 10 giugno 2021. Il relativo trattamento si basa sull'esecuzione del contratto (art. 6, par. 1, lett. b GDPR)."
+
+#: views/pages/play.php:24
+msgid "Tap to start"
+msgstr "Tocca per iniziare"
+
+#: views/pages/legal/privacy.php:27
+msgid "Technical data"
+msgstr "Dati tecnici"
+
+#: views/pages/legal/cookies.php:24
+msgid "Technical, first-party"
+msgstr "Tecnico, di prima parte"
+
+#: views/pages/legal/terms.php:17
+msgid "Termination"
+msgstr "Cessazione"
+
+#: app/Controllers/PageController.php:17 views/components/footer.php:6 views/pages/legal/terms.php:2
+msgid "Terms of Service"
+msgstr "Termini di servizio"
+
+#: views/pages/legal/privacy.php:54
+msgid "The administrators of the service, authorised and bound to confidentiality, to the extent needed to run it. They can see account data, instance names and disk usage; they do not open the content of your disks unless this is necessary for security, to comply with the law, or at your request."
+msgstr "Gli amministratori del servizio, autorizzati e tenuti alla riservatezza, nella misura necessaria a gestirlo. Possono vedere i dati dell'account, i nomi delle istanze e lo spazio occupato; non aprono il contenuto dei tuoi dischi salvo che sia necessario per la sicurezza, per adempiere alla legge o su tua richiesta."
+
+#: views/pages/dashboard.php:171
+msgid "The content of the zips is added to C:. Files already on the disk are never overwritten. Close the instance before adding files. Max :size MB in total."
+msgstr "Il contenuto degli zip viene aggiunto a C:. I file già presenti sul disco non vengono mai sovrascritti. Chiudi l'istanza prima di aggiungere file. Massimo :size MB in totale."
+
+#: views/pages/legal/cookies.php:31
+msgid "The cookie is marked HttpOnly (not readable by scripts) and SameSite=Lax (not sent on requests started by other sites), and it is sent only over HTTPS when the site uses it. It does not contain personal data: only a random identifier of your session."
+msgstr "Il cookie è impostato come HttpOnly (non leggibile dagli script) e SameSite=Lax (non inviato nelle richieste avviate da altri siti), e viaggia solo su HTTPS quando il sito lo usa. Non contiene dati personali: solo un identificativo casuale della tua sessione."
+
+#: app/Controllers/AccountController.php:98 app/Controllers/AccountController.php:119
+msgid "The current password is wrong."
+msgstr "La password attuale è errata."
+
+#: views/pages/legal/privacy.php:15
+msgid "The data controller is:"
+msgstr "Il titolare del trattamento è:"
+
+#: app/Core/App.php:65
+msgid "The database has just been set up, please try again."
+msgstr "Il database è appena stato preparato, riprova."
+
+#: app/Controllers/InstanceController.php:40 app/Controllers/InstanceController.php:100
+msgid "The description is too long."
+msgstr "La descrizione è troppo lunga."
+
+#: views/components/instance-card.php:33
+msgid "The disk is almost full (:pct%). When it reaches 100% the instance stops saving."
+msgstr "Il disco è quasi pieno (:pct%). Al 100% l'istanza smette di salvare."
+
+#: app/helpers.php:136
+msgid "the European Union"
+msgstr "l'Unione europea"
+
+#: app/Controllers/InstanceController.php:61 app/Controllers/InstanceController.php:146
+msgid "The files exceed the maximum disk size of :size MB."
+msgstr "I file superano la dimensione massima del disco di :size MB."
+
+#: app/Controllers/AccountController.php:65
+msgid "The image is too large (max :size KB)."
+msgstr "L'immagine è troppo grande (max :size KB)."
+
+#: views/components/instance-card.php:61 views/components/instance-card.php:66 views/pages/admin/index.php:100
+msgid "The instance \":name\" and its disk will be deleted forever."
+msgstr "L'istanza \":name\" e il suo disco verranno eliminati per sempre."
+
+#: app/Controllers/InstanceController.php:37 app/Controllers/InstanceController.php:97
+msgid "The name is required (max 60 characters)."
+msgstr "Il nome è obbligatorio (max 60 caratteri)."
+
+#: views/pages/legal/privacy.php:25
+msgid "the names and descriptions of your instances, their settings and the content of their virtual disks (files you upload or create inside the emulator)."
+msgstr "nomi e descrizioni delle tue istanze, le loro impostazioni e il contenuto dei dischi virtuali (file che carichi o crei nell'emulatore)."
+
+#: app/Controllers/AuthController.php:72 app/Controllers/AccountController.php:101
+msgid "The password must be at least 8 characters."
+msgstr "La password deve avere almeno 8 caratteri."
+
+#: app/Controllers/AuthController.php:74 app/Controllers/AccountController.php:103
+msgid "The passwords do not match."
+msgstr "Le password non coincidono."
+
+#: views/pages/legal/terms.php:5
+msgid "The service"
+msgstr "Il servizio"
+
+#: views/pages/errors/database.php:3
+msgid "The service cannot reach its database right now. Please try again in a few minutes."
+msgstr "Il servizio non riesce a raggiungere il database. Riprova tra qualche minuto."
+
+#: views/pages/legal/privacy.php:90
+msgid "The service is not intended for children under 14 (or the higher age of digital consent required in your country). If you believe a minor has registered without authorisation, please contact us and we will delete the account."
+msgstr "Il servizio non è destinato ai minori di 14 anni (o dell'età superiore di consenso digitale prevista nel tuo Paese). Se ritieni che un minore si sia registrato senza autorizzazione, contattaci e cancelleremo l'account."
+
+#: views/pages/legal/terms.php:15
+msgid "The service is provided \"as is\", without warranties. We do our best to keep your disks safe, but keep a copy of anything important."
+msgstr "Il servizio è fornito \"così com'è\", senza garanzie. Facciamo il possibile per proteggere i tuoi dischi, ma tieni una copia di ciò che è importante."
+
+#: views/pages/admin/index.php:72
+msgid "The user :email and all their instances will be deleted."
+msgstr "L'utente :email e tutte le sue istanze verranno eliminati."
+
+#: views/pages/legal/privacy.php:27
+msgid "the web server may record standard access logs (IP address, date and time, requested page, browser type) for security purposes. The application itself does not store your IP address."
+msgstr "il web server può registrare i normali log di accesso (indirizzo IP, data e ora, pagina richiesta, tipo di browser) per finalità di sicurezza. L'applicazione in sé non salva il tuo indirizzo IP."
+
+#: views/pages/legal/cookies.php:38
+msgid "These data never leave your device and are not used to track you."
+msgstr "Questi dati non lasciano mai il tuo dispositivo e non vengono usati per tracciarti."
+
+#: views/pages/account.php:86
+msgid "This deletes your account, all your instances and their disks. It cannot be undone."
+msgstr "Elimina il tuo account, tutte le tue istanze e i loro dischi. Non si può annullare."
+
+#: app/Controllers/AuthController.php:69
+msgid "This email is already registered."
+msgstr "Questa email è già registrata."
+
+#: app/Controllers/InstanceController.php:297
+msgid "This instance has been paused by an administrator and cannot be started right now. Its disk is kept safe."
+msgstr "Questa istanza è stata messa in pausa da un amministratore e al momento non può essere avviata. Il disco è al sicuro."
+
+#: app/Controllers/InstanceController.php:87 app/Controllers/InstanceController.php:133 app/Controllers/InstanceController.php:230 app/Controllers/InstanceController.php:241
+msgid "This instance is paused."
+msgstr "Questa istanza è in pausa."
+
+#: views/pages/legal/privacy.php:11
+msgid "This policy explains how :app processes your personal data, in accordance with Regulation (EU) 2016/679 (General Data Protection Regulation, \"GDPR\") and the applicable national law. How we use cookies is described in the separate Cookie Policy."
+msgstr "Questa informativa spiega come :app tratta i tuoi dati personali, ai sensi degli articoli 13 e 14 del Regolamento (UE) 2016/679 (Regolamento generale sulla protezione dei dati, \"GDPR\") e della normativa nazionale applicabile. L'uso dei cookie è descritto nella Cookie policy."
+
+#: views/pages/legal/privacy.php:82
+msgid "To exercise your rights write to :mail. We will reply without undue delay and in any case within one month, which may be extended by two further months for complex requests (Article 12 GDPR). We may ask you to confirm your identity."
+msgstr "Per esercitare i tuoi diritti scrivi a :mail. Risponderemo senza ingiustificato ritardo e comunque entro un mese, prorogabile di altri due mesi per le richieste complesse (articolo 12 GDPR). Potremmo chiederti di confermare la tua identità."
+
+#: views/pages/play.php:17
+msgid "Tools"
+msgstr "Strumenti"
+
+#: views/pages/play.php:16
+msgid "Touchpad mouse"
+msgstr "Mouse a touchpad"
+
+#: views/pages/legal/cookies.php:19
+msgid "Type"
+msgstr "Tipo"
+
+#: views/pages/legal/privacy.php:73
+msgid "Under Articles 15–22 GDPR you have the right to:"
+msgstr "Ai sensi degli articoli 15–22 GDPR hai il diritto di:"
+
+#: views/pages/legal/cookies.php:26
+msgid "Until the browser is closed"
+msgstr "Fino alla chiusura del browser"
+
+#: views/pages/account.php:54
+msgid "Upload"
+msgstr "Carica"
+
+#: app/Controllers/InstanceController.php:272
+msgid "Upload of \":file\" failed (is it too large?)."
+msgstr "Caricamento di \":file\" non riuscito (è troppo grande?)."
+
+#: app/Controllers/AccountController.php:67
+msgid "Use a JPG, PNG, GIF or WebP image."
+msgstr "Usa un'immagine JPG, PNG, GIF o WebP."
+
+#: views/pages/account.php:34
+msgid "Used for new instances."
+msgstr "Usata per le nuove istanze."
+
+#: app/Controllers/AdminController.php:104
+msgid "User deleted."
+msgstr "Utente eliminato."
+
+#: app/Controllers/AdminController.php:115
+msgid "User paused."
+msgstr "Utente messo in pausa."
+
+#: app/Controllers/AdminController.php:115
+msgid "User reactivated."
+msgstr "Utente riattivato."
+
+#: app/Controllers/AdminController.php:92
+msgid "User updated."
+msgstr "Utente aggiornato."
+
+#: views/pages/admin/index.php:6 views/pages/admin/index.php:19
+msgid "Users"
+msgstr "Utenti"
+
+#: views/pages/legal/privacy.php:86
+msgid "We adopt technical and organisational measures appropriate to the risk (Article 32 GDPR), including: hashed passwords, protection against cross-site request forgery, session cookies not accessible to scripts, access control on every instance, re-encoding of uploaded images, and separation between the data of different users. No system is perfectly secure: keep your password private and a copy of important files."
+msgstr "Adottiamo misure tecniche e organizzative adeguate al rischio (articolo 32 GDPR), tra cui: password conservate come hash, protezione dagli attacchi cross-site request forgery, cookie di sessione non accessibili agli script, controllo degli accessi su ogni istanza, ricodifica delle immagini caricate e separazione tra i dati dei diversi utenti. Nessun sistema è sicuro al 100%: tieni riservata la password e conserva una copia dei file importanti."
+
+#: views/pages/legal/privacy.php:29
+msgid "We do not ask for, and ask you not to upload, special categories of data (Article 9 GDPR) or data about criminal convictions. The content of your disks is your responsibility: do not store other people's personal data in it without a valid legal basis."
+msgstr "Non chiediamo, e ti chiediamo di non caricare, categorie particolari di dati (articolo 9 GDPR) o dati relativi a condanne penali. Il contenuto dei tuoi dischi è sotto la tua responsabilità: non conservarvi dati personali di altre persone senza una valida base giuridica."
+
+#: views/pages/legal/privacy.php:47
+msgid "We do not use your data for marketing, we do not sell it, and we do not carry out profiling or decisions based solely on automated processing within the meaning of Article 22 GDPR."
+msgstr "Non usiamo i tuoi dati per il marketing, non li vendiamo e non effettuiamo profilazione né decisioni basate unicamente su trattamenti automatizzati ai sensi dell'articolo 22 GDPR."
+
+#: views/pages/legal/privacy.php:93
+msgid "We may update this policy, for example when the service changes. The date of the last update is shown at the top of the page; significant changes will be announced on the site."
+msgstr "Possiamo aggiornare questa informativa, ad esempio quando il servizio cambia. La data dell'ultimo aggiornamento è indicata in cima alla pagina; le modifiche rilevanti saranno comunicate sul sito."
+
+#: views/pages/legal/privacy.php:67
+msgid "Web server access logs: at most :days days, unless needed to investigate a specific security incident."
+msgstr "Log di accesso del web server: al massimo :days giorni, salvo necessità di indagare uno specifico incidente di sicurezza."
+
+#: app/Controllers/AuthController.php:99
+msgid "Welcome aboard, :name!"
+msgstr "Benvenuto a bordo, :name!"
+
+#: views/pages/legal/cookies.php:12
+msgid "What cookies are"
+msgstr "Cosa sono i cookie"
+
+#: views/pages/admin/index.php:147
+msgid "When closed, the sign-up page is hidden and only existing users can sign in."
+msgstr "Se chiusa, la pagina di registrazione sparisce e possono accedere solo gli utenti esistenti."
+
+#: views/pages/legal/privacy.php:60
+msgid "Where your data is stored"
+msgstr "Dove sono conservati i dati"
+
+#: views/pages/legal/about.php:6
+msgid "While you use an instance, the changes to drive C: are sent to the server every :min minutes, when you press Save and when you leave the page."
+msgstr "Mentre usi un'istanza, le modifiche al disco C: vengono inviate al server ogni :min minuti, quando premi Salva e quando lasci la pagina."
+
+#: views/pages/legal/privacy.php:52
+msgid "Who can access your data"
+msgstr "Chi può accedere ai tuoi dati"
+
+#: app/Controllers/AuthController.php:29
+msgid "Wrong email or password."
+msgstr "Email o password errate."
+
+#: views/pages/legal/privacy.php:83
+msgid "You also have the right to lodge a complaint with a supervisory authority, in particular in the Member State where you live or work. In Italy it is the Garante per la protezione dei dati personali (www.garanteprivacy.it)."
+msgstr "Hai inoltre il diritto di proporre reclamo a un'autorità di controllo, in particolare nello Stato membro in cui risiedi o lavori. In Italia è il Garante per la protezione dei dati personali (www.garanteprivacy.it)."
+
+#: app/Core/Middleware.php:45
+msgid "You are not allowed to do this."
+msgstr "Non hai i permessi per farlo."
+
+#: views/pages/legal/terms.php:9
+msgid "You are responsible for your credentials and for everything done with your account. Each account can create a limited number of instances."
+msgstr "Sei responsabile delle tue credenziali e di tutto ciò che viene fatto con il tuo account. Ogni account può creare un numero limitato di istanze."
+
+#: app/Controllers/AccountController.php:122
+msgid "You are the only administrator: promote another user before deleting your account."
+msgstr "Sei l'unico amministratore: promuovi un altro utente prima di eliminare il tuo account."
+
+#: views/pages/legal/cookies.php:44
+msgid "You can delete or block cookies from your browser settings at any time (usually under \"Privacy\" or \"Site data\"). Blocking the session cookie prevents you from signing in; deleting it signs you out."
+msgstr "Puoi cancellare o bloccare i cookie in qualsiasi momento dalle impostazioni del browser (di solito alla voce \"Privacy\" o \"Dati dei siti\"). Bloccare il cookie di sessione impedisce l'accesso; cancellarlo ti disconnette."
+
+#: views/pages/legal/terms.php:18
+msgid "You can delete your instances at any time. We may suspend accounts that break these terms."
+msgstr "Puoi eliminare le tue istanze in qualsiasi momento. Possiamo sospendere gli account che violano questi termini."
+
+#: views/pages/legal/privacy.php:19
+msgid "You can write to this address for any question about your personal data and to exercise your rights."
+msgstr "Puoi scrivere a questo indirizzo per qualsiasi domanda sui tuoi dati personali e per esercitare i tuoi diritti."
+
+#: app/Controllers/AdminController.php:99
+msgid "You cannot delete yourself."
+msgstr "Non puoi eliminare te stesso."
+
+#: app/Controllers/AdminController.php:111
+msgid "You cannot pause yourself."
+msgstr "Non puoi mettere in pausa te stesso."
+
+#: app/Controllers/AdminController.php:87
+msgid "You cannot remove your own admin role."
+msgstr "Non puoi toglierti il ruolo di admin."
+
+#: views/pages/dashboard.php:20
+msgid "You have no instances yet. Create your first DOS machine!"
+msgstr "Non hai ancora istanze. Crea la tua prima macchina DOS!"
+
+#: app/Controllers/InstanceController.php:26
+msgid "You have reached your instance limit."
+msgstr "Hai raggiunto il limite di istanze."
+
+#: app/Controllers/AuthController.php:83
+msgid "You must accept the terms of service."
+msgstr "Devi accettare i termini di servizio."
+
+#: views/pages/legal/terms.php:8
+msgid "Your account"
+msgstr "Il tuo account"
+
+#: app/Controllers/AccountController.php:128
+msgid "Your account has been deleted. Goodbye!"
+msgstr "Il tuo account è stato eliminato. Ciao!"
+
+#: app/Core/Middleware.php:34
+msgid "Your account has been paused by an administrator. Your data is safe; contact the administrator to know more."
+msgstr "Il tuo account è stato messo in pausa da un amministratore. I tuoi dati sono al sicuro; contatta l'amministratore per saperne di più."
+
+#: app/Core/Middleware.php:30
+msgid "Your account is suspended."
+msgstr "Il tuo account è sospeso."
+
+#: views/pages/account.php:83
+msgid "Your account, all your instances and their disks will be deleted forever. Continue?"
+msgstr "Il tuo account, tutte le istanze e i loro dischi verranno eliminati per sempre. Continuare?"
+
+#: views/pages/legal/privacy.php:58
+msgid "Your data is not disclosed to anyone else and is never published."
+msgstr "I tuoi dati non vengono comunicati a nessun altro e non vengono mai diffusi."
+
+#: views/pages/home.php:31
+msgid "Your disk is saved on the server automatically and when you leave."
+msgstr "Il disco viene salvato sul server in automatico e quando esci."
+
+#: app/Controllers/InstanceController.php:219
+msgid "Your latest changes may not be saved yet."
+msgstr "Le ultime modifiche potrebbero non essere ancora salvate."
+
+#: .env.example:APP_DESCRIPTION
+msgid "Your own DOS machines in the browser. Create an instance, boot it, and your C: drive is saved for you."
+msgstr "Le tue macchine DOS nel browser. Crea un'istanza, avviala: il tuo disco C: viene salvato per te."
+
+#: views/pages/legal/privacy.php:72
+msgid "Your rights"
+msgstr "I tuoi diritti"
+
+#: app/Core/Router.php:41
+msgid "Your session has expired, please reload the page."
+msgstr "La sessione è scaduta, ricarica la pagina."
+

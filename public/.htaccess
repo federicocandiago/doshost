@@ -1,0 +1,12 @@
+Options -Indexes
+AddType application/wasm .wasm
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # If your host needs it (site in a subfolder), uncomment and set the URL path of this folder,
+    # e.g. /doshost/public/ when the whole project is in htdocs/doshost
+    # RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
