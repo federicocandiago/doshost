@@ -3,6 +3,8 @@
 Self-hosted DOS machines in the browser: PHP 8 + MySQL, Bootstrap, `fetch`,
 DOSBox through [js-dos](https://js-dos.com) (WebAssembly, served locally). No Composer/npm dependencies at runtime.
 
+![DOSHost — My instances](docs/screenshot.png)
+
 ## Quick start
 
 ```bash
