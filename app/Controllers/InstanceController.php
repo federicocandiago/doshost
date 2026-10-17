@@ -208,6 +208,7 @@ final class InstanceController extends Controller
                 'startFullscreen' => (bool) $instance->start_fullscreen,
                 'uuid' => $instance->uuid,
                 'exitFlag' => DiskService::EXIT_FLAG,
+                'clockFile' => DiskService::CLOCK_FILE,
                 'i18n' => [
                     'loading' => __('Booting…'),
                     'ready' => __('Ready'),

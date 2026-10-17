@@ -29,6 +29,13 @@ final class DiskService
      * the player to save and go back to the dashboard.
      */
     public const EXIT_FLAG = 'EXIT.FLG';
+    /**
+     * DOS clock: the js-dos DOSBox starts with a fixed date (1998). The player writes C:\DHCLOCK.BAT
+     * (DATE + TIME from the browser's local time) before booting; autoexec runs it and deletes it.
+     */
+    public const CLOCK_FILE = 'DHCLOCK.BAT';
+    private const CLOCK = "rem doshost-clock\nif exist C:\\" . self::CLOCK_FILE . " call C:\\" . self::CLOCK_FILE . "\nif exist C:\\" . self::CLOCK_FILE . " del C:\\" . self::CLOCK_FILE;
+
     /** The user's own startup file on C:, run before the shell (PATH, drivers, menus...). */
     private const USER_AUTOEXEC = "rem doshost-user-autoexec\nif exist C:\\AUTOEXEC.BAT call C:\\AUTOEXEC.BAT";
     private const EXIT_LOOP = "rem doshost-exit-loop\n:doshost\ncommand\necho exit>C:\\" . self::EXIT_FLAG . "\ngoto doshost";
@@ -134,7 +141,7 @@ final class DiskService
 
     /**
      * Brings the autoexec of older disks up to date (no-op when already there):
-     * the EXIT loop and, just before it, the call to the user's C:\AUTOEXEC.BAT.
+     * the DOS clock, the call to the user's C:\AUTOEXEC.BAT and the EXIT loop.
      */
     public function ensureExitLoop(string $uuid): void
     {
@@ -150,6 +157,9 @@ final class DiskService
         }
         if ($conf !== '' && !str_contains($conf, 'doshost-user-autoexec')) {
             $conf = str_replace('rem doshost-exit-loop', $crlf(self::USER_AUTOEXEC) . "\r\nrem doshost-exit-loop", $conf);
+        }
+        if ($conf !== '' && !str_contains($conf, 'doshost-clock')) {
+            $conf = str_replace('rem doshost-user-autoexec', $crlf(self::CLOCK) . "\r\nrem doshost-user-autoexec", $conf);
         }
         if ($conf !== $original) {
             $zip->addFromString('.jsdos/dosbox.conf', $conf);
@@ -351,9 +361,8 @@ final class DiskService
         @echo off
         mount c .
         c:
-        type README.TXT
         CONF;
-        $conf .= "\n" . self::USER_AUTOEXEC . "\n" . self::EXIT_LOOP;
+        $conf .= "\n" . self::CLOCK . "\ntype README.TXT\n" . self::USER_AUTOEXEC . "\n" . self::EXIT_LOOP;
 
         return str_replace("\n", "\r\n", $conf) . "\r\n";
     }

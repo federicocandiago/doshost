@@ -125,8 +125,21 @@
     status(t.loading, '', true);
     await clearBundleCache();
 
+    /** DOS starts with a fixed date: give it the browser's local date and time (run and deleted by autoexec). */
+    function clockFile() {
+        const now = new Date(Date.now() + 2000); // roughly the time it takes DOS to get there
+        const two = (n) => String(n).padStart(2, '0');
+        const lines = [
+            '@echo off',
+            `date ${two(now.getMonth() + 1)}-${two(now.getDate())}-${now.getFullYear()}`,
+            `time ${two(now.getHours())}:${two(now.getMinutes())}:${two(now.getSeconds())}`,
+        ];
+        return { path: cfg.clockFile, contents: new TextEncoder().encode(lines.join('\r\n') + '\r\n') };
+    }
+
     const dos = Dos(document.getElementById('dos'), {
         url: cfg.bundleUrl,
+        initFs: [clockFile()],
         pathPrefix: cfg.pathPrefix,
         lang: ['en', 'ru', 'pt', 'ro'].includes(cfg.lang) ? cfg.lang : 'en', // languages of the js-dos UI
         theme: 'dark',
