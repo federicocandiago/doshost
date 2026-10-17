@@ -49,6 +49,18 @@ The size of an instance is the size of its compressed disk: above `DISK_WARN_PER
 above `DISK_MAX_MB` saving is refused until some data is deleted.
 The emulator's RAM is not saved: the disk is kept, not the state of the running program.
 
+## Email confirmation (optional)
+
+With `EMAIL_VERIFICATION=true` new users get a confirmation link and can sign in only after opening it
+(there is a «Didn't get the confirmation email?» page to send a new one). It is off by default:
+users registered while it is off are stored as already confirmed.
+
+Mail is sent without libraries, with `MAIL_DRIVER` in `.env`: `mail` (PHP `mail()`, usually fine on shared
+hosting), `smtp` (`MAIL_HOST`, `MAIL_PORT`, `MAIL_ENCRYPTION` tls/ssl, `MAIL_USERNAME`, `MAIL_PASSWORD`)
+or `log` (writes the messages to `storage/logs/mail.log`, for development).
+Messages sent from a home connection or without SPF/DKIM for the sender domain often end up in spam, or are
+dropped: use your host's mail or a real SMTP account, with `MAIL_FROM_ADDRESS` on your own domain.
+
 ## Translations
 
 Strings are in English in the code: `__('Hello, :name', ['name' => $n])`.

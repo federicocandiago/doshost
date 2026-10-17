@@ -6,6 +6,11 @@
         <?= component('field', ['name' => 'password', 'type' => 'password', 'label' => __('Password'), 'required' => true, 'attrs' => 'autocomplete="current-password"']) ?>
         <button class="btn btn-light w-100 mt-2" type="submit"><?= e(__('Sign in')) ?></button>
     </form>
+    <?php if (email_verification_enabled()): ?>
+        <p class="small text-secondary mt-3 mb-0 text-center">
+            <a href="<?= base_url() ?>/verify/resend"><?= e(__('Didn\'t get the confirmation email?')) ?></a>
+        </p>
+    <?php endif ?>
     <?php if (registration_enabled()): ?>
         <p class="small text-secondary mt-4 text-center">
             <?= e(__('No account yet?')) ?> <a href="<?= base_url() ?>/register"><?= e(__('Create one')) ?></a>

@@ -77,6 +77,7 @@ final class Migrator
                 'name' => (string) env('ADMIN_NAME', 'Admin'),
                 'email' => $email,
                 'password' => password_hash($password, PASSWORD_DEFAULT),
+                'email_verified_at' => date('Y-m-d H:i:s'),
                 'is_admin' => 1,
             ]);
         }

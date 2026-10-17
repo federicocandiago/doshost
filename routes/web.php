@@ -27,6 +27,9 @@ return static function (Router $r): void {
     $r->get('/register', [AuthController::class, 'showRegister'], ['guest']);
     $r->post('/register', [AuthController::class, 'register'], ['guest']);
     $r->post('/logout', [AuthController::class, 'logout']);
+    $r->get('/verify/resend', [AuthController::class, 'showResend'], ['guest']);
+    $r->post('/verify/resend', [AuthController::class, 'resend'], ['guest']);
+    $r->get('/verify/{token}', [AuthController::class, 'verify']);
 
     // Front-office: instances
     $r->get('/dashboard', [DashboardController::class, 'index'], ['auth']);

@@ -3,6 +3,12 @@ AddType application/wasm .wasm
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    # Always use HTTPS (the player and the session cookie need a secure page): uncomment once
+    # https:// works on your site. If the site then keeps reloading, your host terminates HTTPS
+    # in front of Apache: comment these two lines again.
+    # RewriteCond %{HTTPS} !=on
+    # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
     # If your host needs it (site in a subfolder), uncomment and set the URL path of this folder,
     # e.g. /doshost/public/ when the whole project is in htdocs/doshost
     # RewriteBase /

@@ -140,6 +140,21 @@ function legal(string $key): string
     };
 }
 
+/** EMAIL_VERIFICATION in .env: new users must confirm their address before signing in. */
+function email_verification_enabled(): bool
+{
+    return (bool) env('EMAIL_VERIFICATION', false);
+}
+
+/** Absolute URL (for emails): APP_URL scheme + host + url(). */
+function absolute_url(string $path): string
+{
+    $app = (string) env('APP_URL', '');
+    $origin = preg_replace('#^(https?://[^/]+).*$#', '$1', $app) ?: '';
+
+    return $origin . url($path);
+}
+
 /** Back-office setting, falling back to REGISTRATION_ENABLED in .env (also when the DB is down). */
 function registration_enabled(): bool
 {

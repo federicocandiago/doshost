@@ -49,6 +49,9 @@
                 <div class="user-meta">
                     <span class="mono small text-secondary text-truncate"><?= e($user->email) ?></span>
                     <?= component('status-badge', ['paused' => $user->isSuspended()]) ?>
+                    <?php if (email_verification_enabled() && $user->email_verified_at === null): ?>
+                        <span class="badge text-bg-warning"><?= e(__('Email to confirm')) ?></span>
+                    <?php endif ?>
                 </div>
 
                 <form class="user-limit" method="post" action="<?= base_url() ?>/admin/users/<?= (int) $user->id ?>" data-ajax id="user-<?= (int) $user->id ?>">

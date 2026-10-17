@@ -67,7 +67,7 @@ msgstr ":n istanze"
 msgid ":used of :limit instances in use"
 msgstr ":used di :limit istanze in uso"
 
-#: app/Controllers/PageController.php:32 views/components/footer.php:5 views/pages/legal/about.php:2
+#: app/Controllers/PageController.php:32 views/components/footer.php:4 views/pages/legal/about.php:2
 msgid "About"
 msgstr "Info"
 
@@ -82,6 +82,10 @@ msgstr "Accesso"
 #: app/Core/App.php:84
 msgid "Access denied"
 msgstr "Accesso negato"
+
+#: app/Controllers/AuthController.php:112
+msgid "Account created, but the confirmation email could not be sent. Try again from «Need a new link?»."
+msgstr "Account creato, ma non è stato possibile inviare l'email di conferma. Riprova da qui."
 
 #: views/pages/legal/privacy.php:23
 msgid "Account data"
@@ -115,9 +119,13 @@ msgstr "Aggiungi file a C:"
 msgid "Add to favourites"
 msgstr "Aggiungi ai preferiti"
 
-#: views/pages/admin/index.php:61
+#: views/pages/admin/index.php:64
 msgid "Admin"
 msgstr "Admin"
+
+#: app/Controllers/AuthController.php:115
+msgid "Almost done! We sent a confirmation link to :email. Check the spam folder too."
+msgstr "Ci siamo quasi! Abbiamo inviato un link di conferma a :email. Controlla anche la cartella spam."
 
 #: views/pages/auth/register.php:39
 msgid "Already registered?"
@@ -143,7 +151,7 @@ msgstr "Almeno 8 caratteri."
 msgid "Automatic"
 msgstr "Automatica"
 
-#: views/pages/admin/index.php:133
+#: views/pages/admin/index.php:136
 msgid "Automatic save"
 msgstr "Salvataggio automatico"
 
@@ -199,15 +207,27 @@ msgstr "Chiudi"
 msgid "Complying with legal obligations and requests from authorities."
 msgstr "Adempiere a obblighi di legge e a richieste delle autorità."
 
+#: views/emails/verify-html.php:13
+msgid "Confirm my email"
+msgstr "Conferma la mia email"
+
 #: views/pages/account.php:87
 msgid "Confirm with your password"
 msgstr "Conferma con la tua password"
+
+#: app/Controllers/AuthController.php:142 views/pages/auth/resend.php:2
+msgid "Confirm your email"
+msgstr "Conferma la tua email"
+
+#: app/Services/VerificationMail.php:26
+msgid "Confirm your email for :app"
+msgstr "Conferma la tua email per :app"
 
 #: views/pages/legal/cookies.php:46
 msgid "Contacts and updates"
 msgstr "Contatti e aggiornamenti"
 
-#: app/Controllers/PageController.php:27 views/components/footer.php:8 views/pages/legal/cookies.php:7
+#: app/Controllers/PageController.php:27 views/components/footer.php:7 views/pages/legal/cookies.php:7
 msgid "Cookie Policy"
 msgstr "Cookie policy"
 
@@ -231,11 +251,11 @@ msgstr "Velocità CPU"
 msgid "Create"
 msgstr "Crea"
 
-#: app/Controllers/AuthController.php:42 views/components/navbar.php:36 views/pages/auth/register.php:2 views/pages/auth/register.php:36 views/pages/home.php:12
+#: app/Controllers/AuthController.php:50 views/components/navbar.php:36 views/pages/auth/register.php:2 views/pages/auth/register.php:36 views/pages/home.php:12
 msgid "Create account"
 msgstr "Registrati"
 
-#: views/pages/auth/login.php:11
+#: views/pages/auth/login.php:16
 msgid "Create one"
 msgstr "Creane uno"
 
@@ -275,7 +295,7 @@ msgstr "data di registrazione, ultimo accesso, ultimo avvio e ultimo salvataggio
 msgid "Default DOS keyboard"
 msgstr "Tastiera DOS predefinita"
 
-#: views/pages/admin/index.php:124
+#: views/pages/admin/index.php:127
 msgid "Default limit. Users with a personal limit are not affected."
 msgstr "Limite predefinito. Non si applica agli utenti con un limite personale."
 
@@ -283,7 +303,7 @@ msgstr "Limite predefinito. Non si applica agli utenti con un limite personale."
 msgid "Defending our rights in legal proceedings."
 msgstr "Difendere i nostri diritti in sede giudiziaria."
 
-#: views/components/instance-card.php:67 views/components/confirm-modal.php:12 views/pages/admin/index.php:73 views/pages/admin/index.php:101
+#: views/components/instance-card.php:67 views/components/confirm-modal.php:12 views/pages/admin/index.php:76 views/pages/admin/index.php:104
 msgid "Delete"
 msgstr "Elimina"
 
@@ -307,6 +327,10 @@ msgstr "Istanze eliminate: il disco e la sua versione precedente vengono cancell
 msgid "Description (optional)"
 msgstr "Descrizione (facoltativa)"
 
+#: views/pages/auth/login.php:11
+msgid "Didn't get the confirmation email?"
+msgstr "Non hai ricevuto l'email di conferma?"
+
 #: app/Controllers/InstanceController.php:303
 msgid "Disk full (max :size MB): this instance no longer saves. Delete some files to free space."
 msgstr "Disco pieno (max :size MB): questa istanza non salva più. Elimina qualche file per liberare spazio."
@@ -319,7 +343,7 @@ msgstr "Disco pieno: questa istanza non salva più. Elimina qualche file dentro 
 msgid "Disk space used"
 msgstr "Spazio disco usato"
 
-#: views/components/disk-usage.php:3 views/pages/dashboard.php:8 views/pages/admin/index.php:85 views/pages/play.php:11
+#: views/components/disk-usage.php:3 views/pages/dashboard.php:8 views/pages/admin/index.php:88 views/pages/play.php:11
 msgid "Disk usage"
 msgstr "Spazio disco"
 
@@ -347,11 +371,23 @@ msgstr "Durata"
 msgid "Edit instance"
 msgstr "Modifica istanza"
 
-#: views/pages/auth/login.php:5 views/pages/auth/register.php:6 views/pages/legal/privacy.php:17
+#: views/pages/auth/resend.php:6 views/pages/auth/login.php:5 views/pages/auth/register.php:6 views/pages/legal/privacy.php:17
 msgid "Email"
 msgstr "Email"
 
-#: views/pages/admin/index.php:58
+#: app/Controllers/AuthController.php:135
+msgid "Email confirmed. Welcome aboard, :name!"
+msgstr "Email confermata. Benvenuto a bordo, :name!"
+
+#: app/Controllers/AuthController.php:35
+msgid "Email not confirmed yet."
+msgstr "Email non ancora confermata."
+
+#: views/pages/admin/index.php:53
+msgid "Email to confirm"
+msgstr "Email da confermare"
+
+#: views/pages/admin/index.php:61
 msgid "Empty = default"
 msgstr "Vuoto = predefinito"
 
@@ -366,6 +402,10 @@ msgstr "Inserisci un numero tra 0 e 1000."
 #: app/Controllers/AdminController.php:59
 msgid "Enter a number of minutes between 1 and 120."
 msgstr "Inserisci un numero di minuti tra 1 e 120."
+
+#: views/pages/auth/resend.php:3
+msgid "Enter the address you signed up with and we'll send you a new confirmation link."
+msgstr "Inserisci l'indirizzo con cui ti sei registrato e ti invieremo un nuovo link di conferma."
 
 #: views/pages/legal/privacy.php:77
 msgid "Erasure"
@@ -403,6 +443,10 @@ msgstr "Vai alle mie istanze"
 msgid "have your data deleted (you can delete your account yourself from \"My account\");"
 msgstr "ottenere la cancellazione dei dati (puoi eliminare da solo il tuo account da \"Il mio account\");"
 
+#: views/emails/verify-html.php:9 views/emails/verify-text.php:2
+msgid "Hi :name,"
+msgstr "Ciao :name,"
+
 #: views/pages/legal/privacy.php:63
 msgid "How long we keep it"
 msgstr "Per quanto tempo li conserviamo"
@@ -419,11 +463,23 @@ msgstr "Come gestire i cookie"
 msgid "I accept the <a href=\":terms\" target=\"_blank\">Terms of Service</a> and the <a href=\":privacy\" target=\"_blank\">Privacy Policy</a>."
 msgstr "Accetto i <a href=\":terms\" target=\"_blank\">Termini di servizio</a> e l'<a href=\":privacy\" target=\"_blank\">Informativa sulla privacy</a>."
 
+#: app/Controllers/AuthController.php:164
+msgid "If :email is waiting for confirmation, a new link is on its way. Check the spam folder too."
+msgstr "Se :email è in attesa di conferma, un nuovo link è in arrivo. Controlla anche la cartella spam."
+
+#: views/emails/verify-html.php:16
+msgid "If the button doesn't work, copy this address into your browser:"
+msgstr "Se il pulsante non funziona, copia questo indirizzo nel browser:"
+
+#: views/emails/verify-html.php:17 views/emails/verify-text.php:11
+msgid "If you didn't create an account, just ignore this email."
+msgstr "Se non hai creato un account, ignora questa email."
+
 #: views/pages/legal/privacy.php:87
 msgid "In the event of a personal data breach we will notify the supervisory authority and, where required, the people concerned, as provided by Articles 33 and 34 GDPR."
 msgstr "In caso di violazione dei dati personali informeremo l'autorità di controllo e, quando previsto, le persone interessate, come stabilito dagli articoli 33 e 34 GDPR."
 
-#: views/pages/admin/index.php:157
+#: views/pages/admin/index.php:160
 msgid "Initial values come from .env (DEFAULT_MAX_INSTANCES, AUTOSAVE_MINUTES, REGISTRATION_ENABLED)."
 msgstr "I valori iniziali arrivano dal .env (DEFAULT_MAX_INSTANCES, AUTOSAVE_MINUTES, REGISTRATION_ENABLED)."
 
@@ -459,7 +515,7 @@ msgstr "Istanza riattivata."
 msgid "Instances"
 msgstr "Istanze"
 
-#: views/pages/admin/index.php:123
+#: views/pages/admin/index.php:126
 msgid "Instances per user"
 msgstr "Istanze per utente"
 
@@ -475,11 +531,11 @@ msgstr "Profilo CPU non valido."
 msgid "Invalid disk data."
 msgstr "Dati del disco non validi."
 
-#: app/Controllers/AuthController.php:80 app/Controllers/AccountController.php:42 app/Controllers/InstanceController.php:46 app/Controllers/InstanceController.php:106
+#: app/Controllers/AuthController.php:88 app/Controllers/AccountController.php:42 app/Controllers/InstanceController.php:46 app/Controllers/InstanceController.php:106
 msgid "Invalid keyboard layout."
 msgstr "Layout di tastiera non valido."
 
-#: app/Controllers/AuthController.php:77 app/Controllers/AccountController.php:39
+#: app/Controllers/AuthController.php:85 app/Controllers/AccountController.php:39
 msgid "Invalid language."
 msgstr "Lingua non valida."
 
@@ -507,11 +563,11 @@ msgstr "Mantiene l'accesso, protegge i moduli da attacchi cross-site request for
 msgid "Keyboard"
 msgstr "Tastiera"
 
-#: views/components/instance-card.php:27 views/pages/admin/index.php:86
+#: views/components/instance-card.php:27 views/pages/admin/index.php:89
 msgid "Last saved"
 msgstr "Ultimo salvataggio"
 
-#: views/components/instance-card.php:26 views/pages/dashboard.php:8 views/pages/admin/index.php:86
+#: views/components/instance-card.php:26 views/pages/dashboard.php:8 views/pages/admin/index.php:89
 msgid "Last started"
 msgstr "Ultimo avvio"
 
@@ -535,7 +591,7 @@ msgstr "Legittimo interesse del titolare (art. 6, par. 1, lett. f GDPR) a proteg
 msgid "Legitimate interest of the controller (Art. 6(1)(f) GDPR)."
 msgstr "Legittimo interesse del titolare (art. 6, par. 1, lett. f GDPR)."
 
-#: views/pages/admin/index.php:56
+#: views/pages/admin/index.php:59
 msgid "Limit"
 msgstr "Limite"
 
@@ -555,7 +611,7 @@ msgstr "Metodo non consentito"
 msgid "Minors"
 msgstr "Minori"
 
-#: views/pages/admin/index.php:134
+#: views/pages/admin/index.php:137
 msgid "Minutes between automatic saves of a running instance. The disk is also saved when the user leaves it."
 msgstr "Minuti tra un salvataggio automatico e l'altro di un'istanza in uso. Il disco viene salvato anche quando l'utente esce."
 
@@ -571,7 +627,7 @@ msgstr "Il mio account"
 msgid "My instances"
 msgstr "Le mie istanze"
 
-#: views/pages/dashboard.php:8 views/pages/dashboard.php:52 views/pages/dashboard.php:107 views/pages/auth/register.php:5 views/pages/admin/index.php:85 views/pages/account.php:16 views/pages/legal/cookies.php:19
+#: views/pages/dashboard.php:8 views/pages/dashboard.php:52 views/pages/dashboard.php:107 views/pages/auth/register.php:5 views/pages/admin/index.php:88 views/pages/account.php:16 views/pages/legal/cookies.php:19
 msgid "Name"
 msgstr "Nome"
 
@@ -595,7 +651,7 @@ msgstr "Nuova password"
 msgid "Next"
 msgstr "Successiva"
 
-#: views/pages/auth/login.php:11
+#: views/pages/auth/login.php:16
 msgid "No account yet?"
 msgstr "Non hai un account?"
 
@@ -603,7 +659,7 @@ msgstr "Non hai un account?"
 msgid "No changes to save"
 msgstr "Nessuna modifica da salvare"
 
-#: views/pages/admin/index.php:80
+#: views/pages/admin/index.php:83
 msgid "No instances yet."
 msgstr "Ancora nessuna istanza."
 
@@ -635,7 +691,7 @@ msgstr "Puoi caricare solo file .zip."
 msgid "Only upload software you have the right to use. Pirated software, malware and any content that breaks the law are not allowed and will be removed."
 msgstr "Carica solo software che hai il diritto di usare. Software pirata, malware e qualsiasi contenuto illegale non sono ammessi e verranno rimossi."
 
-#: views/pages/admin/index.php:152
+#: views/pages/admin/index.php:155
 msgid "Open"
 msgstr "Aperta"
 
@@ -663,7 +719,7 @@ msgstr "Password"
 msgid "Password changed."
 msgstr "Password modificata."
 
-#: views/pages/admin/index.php:70 views/pages/admin/index.php:98
+#: views/pages/admin/index.php:73 views/pages/admin/index.php:101
 msgid "Pause"
 msgstr "Metti in pausa"
 
@@ -683,7 +739,7 @@ msgstr "Esecuzione di un contratto (art. 6, par. 1, lett. b GDPR): i Termini di 
 msgid "Personal data we process"
 msgstr "Dati personali trattati"
 
-#: app/Controllers/AdminController.php:62 app/Controllers/AuthController.php:86 app/Controllers/AccountController.php:45 app/Controllers/AccountController.php:106 app/Controllers/AccountController.php:119 app/Controllers/InstanceController.php:52 app/Controllers/InstanceController.php:60 app/Controllers/InstanceController.php:65 app/Controllers/InstanceController.php:109 app/Controllers/InstanceController.php:139 app/Controllers/InstanceController.php:145 app/Controllers/InstanceController.php:149
+#: app/Controllers/AdminController.php:62 app/Controllers/AuthController.php:94 app/Controllers/AuthController.php:150 app/Controllers/AccountController.php:45 app/Controllers/AccountController.php:106 app/Controllers/AccountController.php:119 app/Controllers/InstanceController.php:52 app/Controllers/InstanceController.php:60 app/Controllers/InstanceController.php:65 app/Controllers/InstanceController.php:109 app/Controllers/InstanceController.php:139 app/Controllers/InstanceController.php:145 app/Controllers/InstanceController.php:149
 msgid "Please check the form."
 msgstr "Controlla i campi del modulo."
 
@@ -691,11 +747,15 @@ msgstr "Controlla i campi del modulo."
 msgid "Please choose an image."
 msgstr "Scegli un'immagine."
 
-#: app/Controllers/AuthController.php:67
+#: app/Controllers/AuthController.php:34
+msgid "Please confirm your email first: open the link we sent you (check the spam folder too)."
+msgstr "Prima conferma la tua email: apri il link che ti abbiamo inviato (controlla anche la cartella spam)."
+
+#: app/Controllers/AuthController.php:75 app/Controllers/AuthController.php:150
 msgid "Please enter a valid email address."
 msgstr "Inserisci un indirizzo email valido."
 
-#: app/Controllers/AuthController.php:64 app/Controllers/AccountController.php:36
+#: app/Controllers/AuthController.php:72 app/Controllers/AccountController.php:36
 msgid "Please enter your name."
 msgstr "Inserisci il tuo nome."
 
@@ -707,7 +767,7 @@ msgstr "Portabilità"
 msgid "Previous"
 msgstr "Precedente"
 
-#: app/Controllers/PageController.php:22 views/components/footer.php:7 views/pages/legal/privacy.php:8
+#: app/Controllers/PageController.php:22 views/components/footer.php:6 views/pages/legal/privacy.php:8
 msgid "Privacy Policy"
 msgstr "Informativa sulla privacy"
 
@@ -763,11 +823,11 @@ msgstr "ricevere i tuoi dati in un formato strutturato, di uso comune e leggibil
 msgid "Rectification"
 msgstr "Rettifica"
 
-#: views/pages/admin/index.php:146
+#: views/pages/admin/index.php:149
 msgid "Registration"
 msgstr "Registrazione"
 
-#: app/Controllers/AuthController.php:53
+#: app/Controllers/AuthController.php:61
 msgid "Registration is currently closed."
 msgstr "Le registrazioni sono chiuse."
 
@@ -787,7 +847,7 @@ msgstr "Ripeti la password"
 msgid "Restriction"
 msgstr "Limitazione"
 
-#: views/pages/admin/index.php:70 views/pages/admin/index.php:98
+#: views/pages/admin/index.php:73 views/pages/admin/index.php:101
 msgid "Resume"
 msgstr "Riattiva"
 
@@ -795,7 +855,7 @@ msgstr "Riattiva"
 msgid "Retry"
 msgstr "Riprova"
 
-#: views/pages/dashboard.php:149 views/pages/admin/index.php:64 views/pages/account.php:38 views/pages/play.php:13
+#: views/pages/dashboard.php:149 views/pages/admin/index.php:67 views/pages/account.php:38 views/pages/play.php:13
 msgid "Save"
 msgstr "Salva"
 
@@ -807,7 +867,7 @@ msgstr "Salva ed esci"
 msgid "Save failed!"
 msgstr "Salvataggio non riuscito!"
 
-#: views/pages/admin/index.php:158
+#: views/pages/admin/index.php:161
 msgid "Save settings"
 msgstr "Salva impostazioni"
 
@@ -827,6 +887,10 @@ msgstr "Sicurezza"
 msgid "Security of the service, preventing abuse, enforcing the Terms of Service (e.g. pausing an account or instance)."
 msgstr "Sicurezza del servizio, prevenzione degli abusi, applicazione dei Termini di servizio (ad esempio la sospensione di un account o di un'istanza)."
 
+#: views/pages/auth/resend.php:7
+msgid "Send a new link"
+msgstr "Invia un nuovo link"
+
 #: views/pages/legal/privacy.php:69
 msgid "Server backups, if any, are overwritten in the normal backup cycle."
 msgstr "Gli eventuali backup del server vengono sovrascritti nel normale ciclo di backup."
@@ -843,7 +907,7 @@ msgstr "Dati di sessione: fino all'uscita dall'account o alla chiusura del brows
 msgid "Session expired"
 msgstr "Sessione scaduta"
 
-#: views/components/instance-card.php:51 views/pages/admin/index.php:118
+#: views/components/instance-card.php:51 views/pages/admin/index.php:121
 msgid "Settings"
 msgstr "Impostazioni"
 
@@ -863,7 +927,7 @@ msgstr "Mostra o nascondi il cursore di sistema sopra DOS"
 msgid "Show the system cursor"
 msgstr "Mostra il cursore di sistema"
 
-#: app/Controllers/AuthController.php:19 views/components/navbar.php:34 views/pages/auth/login.php:2 views/pages/auth/login.php:7 views/pages/auth/register.php:39 views/pages/home.php:10
+#: app/Controllers/AuthController.php:20 views/components/navbar.php:34 views/pages/auth/resend.php:9 views/pages/auth/login.php:2 views/pages/auth/login.php:7 views/pages/auth/register.php:39 views/pages/home.php:10
 msgid "Sign in"
 msgstr "Accedi"
 
@@ -899,7 +963,7 @@ msgstr "Crea le tue macchine DOS, ognuna con il suo disco C:."
 msgid "Start in full screen"
 msgstr "Avvia a schermo intero"
 
-#: views/pages/admin/index.php:85
+#: views/pages/admin/index.php:88
 msgid "Status"
 msgstr "Stato"
 
@@ -923,9 +987,13 @@ msgstr "Tecnico, di prima parte"
 msgid "Termination"
 msgstr "Cessazione"
 
-#: app/Controllers/PageController.php:17 views/components/footer.php:6 views/pages/legal/terms.php:2
+#: app/Controllers/PageController.php:17 views/components/footer.php:5 views/pages/legal/terms.php:2
 msgid "Terms of Service"
 msgstr "Termini di servizio"
+
+#: views/emails/verify-html.php:10 views/emails/verify-text.php:5
+msgid "Thanks for signing up to :app! Open this link to confirm your email address and start using your DOS machines:"
+msgstr "Grazie per esserti registrato su :app! Apri questo link per confermare il tuo indirizzo email e iniziare a usare le tue macchine DOS:"
 
 #: views/pages/legal/privacy.php:54
 msgid "The administrators of the service, authorised and bound to confidentiality, to the extent needed to run it. They can see account data, instance names and disk usage; they do not open the content of your disks unless this is necessary for security, to comply with the law, or at your request."
@@ -959,6 +1027,10 @@ msgstr "La descrizione è troppo lunga."
 msgid "The disk is almost full (:pct%). When it reaches 100% the instance stops saving."
 msgstr "Il disco è quasi pieno (:pct%). Al 100% l'istanza smette di salvare."
 
+#: app/Controllers/AuthController.php:160
+msgid "The email could not be sent right now. Please try again later."
+msgstr "Non è stato possibile inviare l'email. Riprova più tardi."
+
 #: app/helpers.php:136
 msgid "the European Union"
 msgstr "l'Unione europea"
@@ -971,7 +1043,7 @@ msgstr "I file superano la dimensione massima del disco di :size MB."
 msgid "The image is too large (max :size KB)."
 msgstr "L'immagine è troppo grande (max :size KB)."
 
-#: views/components/instance-card.php:61 views/components/instance-card.php:66 views/pages/admin/index.php:100
+#: views/components/instance-card.php:61 views/components/instance-card.php:66 views/pages/admin/index.php:103
 msgid "The instance \":name\" and its disk will be deleted forever."
 msgstr "L'istanza \":name\" e il suo disco verranno eliminati per sempre."
 
@@ -983,11 +1055,11 @@ msgstr "Il nome è obbligatorio (max 60 caratteri)."
 msgid "the names and descriptions of your instances, their settings and the content of their virtual disks (files you upload or create inside the emulator)."
 msgstr "nomi e descrizioni delle tue istanze, le loro impostazioni e il contenuto dei dischi virtuali (file che carichi o crei nell'emulatore)."
 
-#: app/Controllers/AuthController.php:72 app/Controllers/AccountController.php:101
+#: app/Controllers/AuthController.php:80 app/Controllers/AccountController.php:101
 msgid "The password must be at least 8 characters."
 msgstr "La password deve avere almeno 8 caratteri."
 
-#: app/Controllers/AuthController.php:74 app/Controllers/AccountController.php:103
+#: app/Controllers/AuthController.php:82 app/Controllers/AccountController.php:103
 msgid "The passwords do not match."
 msgstr "Le password non coincidono."
 
@@ -1007,7 +1079,7 @@ msgstr "Il servizio non è destinato ai minori di 14 anni (o dell'età superiore
 msgid "The service is provided \"as is\", without warranties. We do our best to keep your disks safe, but keep a copy of anything important."
 msgstr "Il servizio è fornito \"così com'è\", senza garanzie. Facciamo il possibile per proteggere i tuoi dischi, ma tieni una copia di ciò che è importante."
 
-#: views/pages/admin/index.php:72
+#: views/pages/admin/index.php:75
 msgid "The user :email and all their instances will be deleted."
 msgstr "L'utente :email e tutte le sue istanze verranno eliminati."
 
@@ -1019,11 +1091,15 @@ msgstr "il web server può registrare i normali log di accesso (indirizzo IP, da
 msgid "These data never leave your device and are not used to track you."
 msgstr "Questi dati non lasciano mai il tuo dispositivo e non vengono usati per tracciarti."
 
+#: app/Controllers/AuthController.php:129
+msgid "This confirmation link is not valid or has already been used."
+msgstr "Questo link di conferma non è valido o è già stato usato."
+
 #: views/pages/account.php:86
 msgid "This deletes your account, all your instances and their disks. It cannot be undone."
 msgstr "Elimina il tuo account, tutte le tue istanze e i loro dischi. Non si può annullare."
 
-#: app/Controllers/AuthController.php:69
+#: app/Controllers/AuthController.php:77
 msgid "This email is already registered."
 msgstr "Questa email è già registrata."
 
@@ -1119,7 +1195,7 @@ msgstr "Possiamo aggiornare questa informativa, ad esempio quando il servizio ca
 msgid "Web server access logs: at most :days days, unless needed to investigate a specific security incident."
 msgstr "Log di accesso del web server: al massimo :days giorni, salvo necessità di indagare uno specifico incidente di sicurezza."
 
-#: app/Controllers/AuthController.php:99
+#: app/Controllers/AuthController.php:121
 msgid "Welcome aboard, :name!"
 msgstr "Benvenuto a bordo, :name!"
 
@@ -1127,7 +1203,7 @@ msgstr "Benvenuto a bordo, :name!"
 msgid "What cookies are"
 msgstr "Cosa sono i cookie"
 
-#: views/pages/admin/index.php:147
+#: views/pages/admin/index.php:150
 msgid "When closed, the sign-up page is hidden and only existing users can sign in."
 msgstr "Se chiusa, la pagina di registrazione sparisce e possono accedere solo gli utenti esistenti."
 
@@ -1143,7 +1219,7 @@ msgstr "Mentre usi un'istanza, le modifiche al disco C: vengono inviate al serve
 msgid "Who can access your data"
 msgstr "Chi può accedere ai tuoi dati"
 
-#: app/Controllers/AuthController.php:29
+#: app/Controllers/AuthController.php:31
 msgid "Wrong email or password."
 msgstr "Email o password errate."
 
@@ -1195,7 +1271,7 @@ msgstr "Non hai ancora istanze. Crea la tua prima macchina DOS!"
 msgid "You have reached your instance limit."
 msgstr "Hai raggiunto il limite di istanze."
 
-#: app/Controllers/AuthController.php:83
+#: app/Controllers/AuthController.php:91
 msgid "You must accept the terms of service."
 msgstr "Devi accettare i termini di servizio."
 

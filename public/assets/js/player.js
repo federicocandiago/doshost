@@ -32,9 +32,18 @@
         usageEl.classList.toggle('warn', Boolean(warning));
     }
 
+    /**
+     * Fingerprint of the disk, only to skip identical uploads. crypto.subtle exists only in secure
+     * contexts (HTTPS or localhost): on plain HTTP fall back to FNV-1a, which is enough for this.
+     */
     async function hash(data) {
-        const digest = await crypto.subtle.digest('SHA-256', data);
-        return Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, '0')).join('');
+        if (window.crypto?.subtle) {
+            const digest = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, '0')).join('');
+        }
+        let h = 0x811c9dc5;
+        for (let i = 0; i < data.length; i++) h = Math.imul(h ^ data[i], 0x01000193);
+        return `fnv-${data.length}-${(h >>> 0).toString(16)}`;
     }
 
     async function upload(data) {
