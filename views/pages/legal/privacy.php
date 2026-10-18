@@ -76,7 +76,7 @@ $mail = '<a href="mailto:' . e($email) . '">' . e($email) . '</a>';
         <li><strong><?= e(__('Rectification')) ?></strong> — <?= e(__('correct inaccurate data (you can change your name and preferences from "My account");')) ?></li>
         <li><strong><?= e(__('Erasure')) ?></strong> — <?= e(__('have your data deleted (you can delete your account yourself from "My account");')) ?></li>
         <li><strong><?= e(__('Restriction')) ?></strong> — <?= e(__('ask us to limit the processing in the cases provided by Article 18;')) ?></li>
-        <li><strong><?= e(__('Portability')) ?></strong> — <?= e(__('receive your data in a structured, commonly used, machine-readable format (the disks can also be downloaded as a .jsdos archive from the instance tools);')) ?></li>
+        <li><strong><?= e(__('Portability')) ?></strong> — <?= e(__('receive your data in a structured, commonly used, machine-readable format (each disk can be downloaded as a .zip with «Download backup» in the instance settings);')) ?></li>
         <li><strong><?= e(__('Objection')) ?></strong> — <?= e(__('object at any time to processing based on our legitimate interest, for reasons related to your particular situation.')) ?></li>
     </ul>
     <p><?= __('To exercise your rights write to :mail. We will reply without undue delay and in any case within one month, which may be extended by two further months for complex requests (Article 12 GDPR). We may ask you to confirm your identity.', ['mail' => $mail]) ?></p>

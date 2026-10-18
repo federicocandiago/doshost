@@ -40,7 +40,9 @@ return static function (Router $r): void {
     $r->post('/instances/{uuid}/delete', [InstanceController::class, 'destroy'], ['auth']);
     $r->get('/play/{uuid}', [InstanceController::class, 'play'], ['auth']);
     $r->get('/instances/{uuid}/bundle.jsdos', [InstanceController::class, 'bundle'], ['auth']);
+    $r->get('/instances/{uuid}/backup', [InstanceController::class, 'backup'], ['auth']);
     $r->post('/instances/{uuid}/disk', [InstanceController::class, 'saveDisk'], ['auth']);
+    $r->post('/instances/{uuid}/disk/delta', [InstanceController::class, 'saveDelta'], ['auth']);
 
     // Front-office: account
     $r->get('/account', [AccountController::class, 'show'], ['auth']);

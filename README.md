@@ -41,9 +41,13 @@ buttons with `data-confirm` + `data-action` go through the confirmation modal.
 Each instance is a js-dos bundle (`storage/disks/{uuid}/bundle.jsdos`): a zip with `.jsdos/dosbox.conf`
 plus the whole content of `C:`. Zip files uploaded at creation, or later with the file icon, are extracted
 into `C:` without ever overwriting files that are already there.
-The browser sends the whole disk every `AUTOSAVE_MINUTES`, on «Save», when the tab gets hidden,
-on «Save & exit» and when DOS `EXIT` is typed (a hash avoids useless uploads). The previous file is kept
-as `bundle.jsdos.bak`. If `C:\AUTOEXEC.BAT` exists, the instance runs it at every start.
+The browser saves every `AUTOSAVE_MINUTES`, on «Save», when the tab gets hidden, on «Save & exit» and
+when DOS `EXIT` is typed. Saves are incremental: only the files written since boot (js-dos `persist(true)`)
+plus the list of every file on `C:` with its size, so the server can also apply deletions. If the list
+doesn't match what the server ends up with, it answers `409` and the browser sends the whole disk instead.
+Nothing is sent when nothing changed. The previous disk is kept as `bundle.jsdos.bak`.
+«Download backup» in the instance settings downloads the whole disk as a `.zip`; it can be uploaded again
+into any instance with the file icon. If `C:\AUTOEXEC.BAT` exists, the instance runs it at every start.
 
 The size of an instance is the size of its compressed disk: above `DISK_WARN_PERCENT` a warning appears,
 above `DISK_MAX_MB` saving is refused until some data is deleted.

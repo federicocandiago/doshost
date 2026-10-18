@@ -197,6 +197,7 @@ final class InstanceController extends Controller
                 // versioned URL: a new save means a new URL, never a stale copy
                 'bundleUrl' => url("/instances/{$instance->uuid}/bundle.jsdos") . '?v=' . filemtime($this->disks->bundlePath($instance->uuid)),
                 'saveUrl' => url("/instances/{$instance->uuid}/disk"),
+                'deltaUrl' => url("/instances/{$instance->uuid}/disk/delta"),
                 'pathPrefix' => url('/vendor/js-dos/emulators/'),
                 'backUrl' => url('/dashboard'),
                 'csrf' => csrf_token(),
@@ -222,6 +223,17 @@ final class InstanceController extends Controller
                 ],
             ],
         ], 'layouts/fullscreen');
+    }
+
+    /** Download of the whole disk as of the last save (also for paused instances: it's the user's data). */
+    public function backup(Request $request, string $uuid): Response
+    {
+        $instance = $this->owned($uuid);
+        $slug = trim((string) preg_replace('/[^A-Za-z0-9]+/', '-', (string) $instance->name), '-') ?: 'instance';
+        $file = strtolower($slug) . '-' . date('Y-m-d') . '.zip';
+
+        return Response::file($this->disks->bundlePath($instance->uuid), 'application/zip')
+            ->withHeader('Content-Disposition', 'attachment; filename="' . $file . '"');
     }
 
     public function bundle(Request $request, string $uuid): Response
@@ -278,6 +290,57 @@ final class InstanceController extends Controller
         }
 
         return null;
+    }
+
+    /**
+     * Incremental save: the files written since boot (zip) + the list of everything on C:.
+     * Answers 409 {needFull} when the list doesn't match: the player then sends the whole disk.
+     */
+    public function saveDelta(Request $request, string $uuid): Response
+    {
+        $instance = $this->owned($uuid);
+        if ($instance->isSuspended()) {
+            return $this->fail(__('This instance is paused.'), [], 423);
+        }
+
+        $manifest = json_decode((string) $request->input('manifest', ''), true);
+        if (!is_array($manifest)) {
+            return $this->fail(__('Invalid disk data.'), [], 400);
+        }
+        $list = [];
+        foreach ($manifest as $entry) {
+            if (is_array($entry) && isset($entry[0]) && is_string($entry[0])) {
+                $list[$entry[0]] = (int) ($entry[1] ?? -1);
+            }
+        }
+
+        $upload = $request->files('changes')[0] ?? null;
+        if ($upload !== null && $upload['error'] !== UPLOAD_ERR_OK) {
+            return $this->fail(__('Invalid disk data.'), [], 400);
+        }
+
+        try {
+            $bytes = $this->disks->applyDelta($instance->uuid, $list, $upload['tmp_name'] ?? null);
+        } catch (\LengthException) {
+            $instance->update(['disk_full' => 1]);
+            return $this->fail($this->fullMessage(), [], 413);
+        } catch (\InvalidArgumentException) {
+            return $this->fail(__('Invalid disk data.'), [], 400);
+        }
+
+        if ($bytes === null) {
+            return Response::json(['ok' => false, 'needFull' => true], 409);
+        }
+
+        $now = date('Y-m-d H:i:s');
+        $instance->update(['disk_bytes' => $bytes, 'disk_full' => 0, 'last_saved_at' => $now]);
+
+        return $this->ok('', [
+            'bytes' => $bytes,
+            'percent' => $instance->usagePercent(),
+            'warning' => $instance->diskState() === 'warning',
+            'saved_at' => $now,
+        ]);
     }
 
     private function owned(string $uuid): Instance

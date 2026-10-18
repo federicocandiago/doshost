@@ -198,6 +198,95 @@ final class DiskService
         return "[{$section}]\r\n{$key}={$value}\r\n\r\n" . $conf;
     }
 
+    /**
+     * Incremental save. $manifest lists every file and folder now on C: (path => size, folders end
+     * with "/" and have size -1); $changesPath is the zip of the files written since boot (js-dos
+     * persist(true)), or null. Changed files are replaced, files no longer listed are deleted.
+     *
+     * Returns the new disk size, or null when the result would not match the manifest (a file that
+     * is new or has another size but is not among the changes): the caller then asks for a full save.
+     */
+    public function applyDelta(string $uuid, array $manifest, ?string $changesPath): ?int
+    {
+        $bundle = $this->bundlePath($uuid);
+        $tmp = $bundle . '.delta';
+        if (!copy($bundle, $tmp)) {
+            throw new \RuntimeException('Unable to copy the disk');
+        }
+
+        $zip = new ZipArchive();
+        if ($zip->open($tmp) !== true) {
+            unlink($tmp);
+            throw new \RuntimeException('Unable to open the disk');
+        }
+
+        try {
+            // 1. files written since boot
+            if ($changesPath !== null) {
+                $changes = new ZipArchive();
+                if ($changes->open($changesPath, ZipArchive::RDONLY) !== true) {
+                    throw new \InvalidArgumentException('Invalid changes archive');
+                }
+                for ($i = 0; $i < $changes->numFiles; $i++) {
+                    $name = (string) $changes->getNameIndex($i);
+                    if ($this->unsafePath($name)) {
+                        continue;
+                    }
+                    if (str_ends_with($name, '/')) {
+                        if ($zip->locateName($name) === false) {
+                            $zip->addEmptyDir(rtrim($name, '/'));
+                        }
+                    } else {
+                        $zip->addFromString($name, (string) $changes->getFromIndex($i));
+                    }
+                }
+                $changes->close();
+            }
+
+            // 2. what is no longer on C: (the DOSBox configuration always stays)
+            for ($i = $zip->numFiles - 1; $i >= 0; $i--) {
+                $name = (string) $zip->getNameIndex($i);
+                if (!array_key_exists($name, $manifest) && !str_starts_with($name, '.jsdos/')) {
+                    $zip->deleteIndex($i);
+                }
+            }
+
+            // 3. consistency: every listed file must now be there with the same size
+            foreach ($manifest as $name => $size) {
+                if (str_ends_with((string) $name, '/') || $this->unsafePath((string) $name)) {
+                    continue;
+                }
+                $stat = $zip->statName((string) $name);
+                if ($stat === false || (int) $stat['size'] !== (int) $size) {
+                    $zip->close();
+                    unlink($tmp);
+                    return null;
+                }
+            }
+        } catch (\Throwable $e) {
+            @$zip->close();
+            @unlink($tmp);
+            throw $e;
+        }
+        $zip->close();
+
+        clearstatcache();
+        if (filesize($tmp) > self::maxBytes()) {
+            unlink($tmp);
+            throw new \LengthException('Disk too large');
+        }
+        copy($bundle, $bundle . '.bak');
+        rename($tmp, $bundle);
+
+        return $this->size($uuid);
+    }
+
+    private function unsafePath(string $name): bool
+    {
+        return $name === '' || str_starts_with($name, '/') || str_contains($name, '\\')
+            || in_array('..', explode('/', $name), true);
+    }
+
     public function destroy(string $uuid): void
     {
         $dir = $this->dir($uuid);

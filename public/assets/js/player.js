@@ -60,7 +60,86 @@
         return json;
     }
 
-    /** Takes a snapshot of the whole drive C: and uploads it if it changed. */
+    /**
+     * Every file and folder on C:, as [path, size] (folders: "PATH/" and -1), from the in-memory tree.
+     * Our own short-lived files (clock, exit flag) are left out: they exist only for a moment.
+     */
+    const transient = [cfg.clockFile, cfg.exitFlag].map((f) => f.toLowerCase());
+    function manifestOf(tree) {
+        const list = [];
+        const walk = (nodes, prefix) => {
+            for (const node of nodes ?? []) {
+                const path = prefix + node.name;
+                if (prefix === '' && !node.nodes && transient.includes(node.name.toLowerCase())) continue;
+                if (node.nodes) {
+                    list.push([path + '/', -1]);
+                    walk(node.nodes, path + '/');
+                } else {
+                    list.push([path, node.size ?? 0]);
+                }
+            }
+        };
+        walk(tree?.nodes, '');
+        return list;
+    }
+
+    /**
+     * Name, CRC32 and size of every entry, read from the zip's central directory. Timestamps are
+     * left out on purpose: js-dos stamps folders with the current time on every call.
+     */
+    function zipSignature(zip) {
+        if (!zip || zip.length < 22) return '';
+        const view = new DataView(zip.buffer, zip.byteOffset, zip.byteLength);
+        let end = zip.length - 22;
+        while (end >= 0 && view.getUint32(end, true) !== 0x06054b50) end--; // end of central directory
+        if (end < 0) return String(zip.length);
+        const count = view.getUint16(end + 10, true);
+        let at = view.getUint32(end + 16, true);
+        const decoder = new TextDecoder();
+        const entries = [];
+        for (let i = 0; i < count && view.getUint32(at, true) === 0x02014b50; i++) {
+            const nameLength = view.getUint16(at + 28, true);
+            const name = decoder.decode(zip.subarray(at + 46, at + 46 + nameLength));
+            entries.push(`${name}:${view.getUint32(at + 16, true)}:${view.getUint32(at + 24, true)}`);
+            at += 46 + nameLength + view.getUint16(at + 30, true) + view.getUint16(at + 32, true);
+        }
+        return entries.join('|');
+    }
+
+    /**
+     * What an incremental save sends: the list of everything on C: and the zip of the files
+     * written since boot (js-dos persist(true)). The fingerprint tells whether anything changed.
+     */
+    async function snapshot() {
+        const manifest = JSON.stringify(manifestOf(await ci.fsTree()));
+        const changes = await ci.persist(true);
+        const fingerprint = await hash(new TextEncoder().encode(manifest + '\n' + zipSignature(changes)));
+        return { manifest, changes, fingerprint };
+    }
+
+    /** Incremental upload. Resolves to {needFull: true} when the server wants the whole disk. */
+    async function uploadDelta({ manifest, changes }) {
+        const form = new FormData();
+        form.append('manifest', manifest);
+        if (changes) form.append('changes', new Blob([changes], { type: 'application/zip' }), 'changes.zip');
+        const res = await fetch(cfg.deltaUrl, {
+            method: 'POST',
+            credentials: 'same-origin',
+            keepalive: manifest.length + (changes?.length ?? 0) < 60000, // small saves survive page unload
+            headers: { 'Accept': 'application/json', 'X-CSRF-Token': cfg.csrf },
+            body: form,
+        });
+        const json = await res.json().catch(() => ({}));
+        if (res.status === 409 && json.needFull) return { needFull: true };
+        if (res.status === 413) throw Object.assign(new Error(t.full), { full: true });
+        if (!res.ok || !json.ok) throw new Error(json.message || `HTTP ${res.status}`);
+        return json;
+    }
+
+    /**
+     * Saves drive C: incrementally: only the files written since boot, plus the file list (for
+     * deletions). If the server finds something the changes don't explain, the whole disk is sent.
+     */
     function save() {
         if (!ci) return Promise.resolve();
         if (saving) return saving;
@@ -68,16 +147,17 @@
         status(t.saving, '', true);
         saving = (async () => {
             try {
-                const data = await ci.persist(false); // full bundle: config + every file of C:
-                if (!data) return status(t.nothing);
-                if (data.byteLength > cfg.maxBytes) throw Object.assign(new Error(t.full), { full: true });
-
-                const h = await hash(data);
-                if (h === lastHash) {
+                const delta = await snapshot();
+                if (delta.fingerprint === lastHash) {
                     status(t.nothing);
                 } else {
-                    const res = await upload(data);
-                    lastHash = h;
+                    let res = await uploadDelta(delta);
+                    if (res.needFull) {
+                        const data = await ci.persist(false); // full bundle: config + every file of C:
+                        if (data.byteLength > cfg.maxBytes) throw Object.assign(new Error(t.full), { full: true });
+                        res = await upload(data);
+                    }
+                    lastHash = delta.fingerprint;
                     usage(res.percent, res.warning);
                     status(t.saved.replace(':time', new Date().toLocaleTimeString(cfg.lang)));
                 }
@@ -161,7 +241,7 @@
                 else if (fullscreenPending) status(t.fullscreenHint, '', true);
                 else status(t.ready);
                 // Remember the initial state so an untouched disk is never re-uploaded
-                ci.persist(false).then(async (data) => { if (data) lastHash = await hash(data); }).catch(() => {});
+                snapshot().then((s) => { lastHash = s.fingerprint; }).catch(() => {});
             }
         },
     });

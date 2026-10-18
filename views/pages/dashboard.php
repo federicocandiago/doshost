@@ -100,7 +100,9 @@
             <?= csrf_field() ?>
             <div class="modal-header">
                 <h2 class="modal-title fs-5" id="edit-title"><?= e(__('Edit instance')) ?></h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?= e(__('Close')) ?>"></button>
+                <a class="modal-action ms-auto" href="#" data-bind="href:backupUrl" download
+                   title="<?= e(__('Download backup')) ?>" aria-label="<?= e(__('Download backup')) ?>"><?= component('icon', ['name' => 'download', 'size' => 18]) ?></a>
+                <button type="button" class="btn-close ms-2" data-bs-dismiss="modal" aria-label="<?= e(__('Close')) ?>"></button>
             </div>
             <div class="modal-body">
                 <div class="mb-3">
@@ -143,10 +145,12 @@
                 </div>
                 <div class="form-text mt-2"><?= e(__('Speed and keyboard apply from the next boot. Close the instance before changing them.')) ?></div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-link text-danger me-auto px-0" data-bind="data-action:deleteAction,data-confirm:deleteText"><?= e(__('Delete instance')) ?></button>
-                <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal"><?= e(__('Cancel')) ?></button>
-                <button type="submit" class="btn btn-light"><?= e(__('Save')) ?></button>
+            <div class="modal-footer justify-content-between flex-nowrap">
+                <button type="button" class="btn btn-link btn-sm text-danger px-0 text-nowrap" data-bind="data-action:deleteAction,data-confirm:deleteText"><?= e(__('Delete instance')) ?></button>
+                <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal"><?= e(__('Cancel')) ?></button>
+                    <button type="submit" class="btn btn-light"><?= e(__('Save')) ?></button>
+                </div>
             </div>
         </form>
     </div>

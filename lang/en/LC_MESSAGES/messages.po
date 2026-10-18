@@ -107,11 +107,11 @@ msgstr ""
 msgid "Activity data"
 msgstr ""
 
-#: views/pages/dashboard.php:175
+#: views/pages/dashboard.php:179
 msgid "Add files"
 msgstr ""
 
-#: views/components/instance-card.php:45 views/pages/dashboard.php:160
+#: views/components/instance-card.php:45 views/pages/dashboard.php:164
 msgid "Add files to C:"
 msgstr ""
 
@@ -171,7 +171,7 @@ msgstr ""
 msgid "Boot"
 msgstr ""
 
-#: app/Controllers/InstanceController.php:212 views/pages/play.php:4
+#: app/Controllers/InstanceController.php:214 views/pages/play.php:4
 msgid "Booting…"
 msgstr ""
 
@@ -179,7 +179,7 @@ msgstr ""
 msgid "Built with PHP, MySQL, Bootstrap and js-dos (DOSBox)."
 msgstr ""
 
-#: views/components/confirm-modal.php:11 views/pages/dashboard.php:90 views/pages/dashboard.php:148 views/pages/dashboard.php:174
+#: views/components/confirm-modal.php:11 views/pages/dashboard.php:90 views/pages/dashboard.php:151 views/pages/dashboard.php:178
 msgid "Cancel"
 msgstr ""
 
@@ -195,11 +195,11 @@ msgstr ""
 msgid "Choose at least one .zip file."
 msgstr ""
 
-#: app/Controllers/InstanceController.php:220
+#: app/Controllers/InstanceController.php:222
 msgid "Click or press a key to go full screen"
 msgstr ""
 
-#: views/components/flash.php:4 views/components/confirm-modal.php:7 views/pages/dashboard.php:49 views/pages/dashboard.php:103 views/pages/dashboard.php:161
+#: views/components/flash.php:4 views/components/confirm-modal.php:7 views/pages/dashboard.php:49 views/pages/dashboard.php:105 views/pages/dashboard.php:165
 msgid "Close"
 msgstr ""
 
@@ -243,7 +243,7 @@ msgstr ""
 msgid "correct inaccurate data (you can change your name and preferences from \"My account\");"
 msgstr ""
 
-#: views/pages/dashboard.php:56 views/pages/dashboard.php:118
+#: views/pages/dashboard.php:56 views/pages/dashboard.php:120
 msgid "CPU speed"
 msgstr ""
 
@@ -303,7 +303,7 @@ msgstr ""
 msgid "Defending our rights in legal proceedings."
 msgstr ""
 
-#: views/components/instance-card.php:67 views/components/confirm-modal.php:12 views/pages/admin/index.php:76 views/pages/admin/index.php:104
+#: views/components/instance-card.php:70 views/components/confirm-modal.php:12 views/pages/admin/index.php:76 views/pages/admin/index.php:104
 msgid "Delete"
 msgstr ""
 
@@ -311,7 +311,7 @@ msgstr ""
 msgid "Delete account"
 msgstr ""
 
-#: views/pages/dashboard.php:147
+#: views/pages/dashboard.php:149
 msgid "Delete instance"
 msgstr ""
 
@@ -323,7 +323,7 @@ msgstr ""
 msgid "Deleted instances: the disk and its previous version are deleted immediately."
 msgstr ""
 
-#: views/pages/dashboard.php:53 views/pages/dashboard.php:112
+#: views/pages/dashboard.php:53 views/pages/dashboard.php:114
 msgid "Description (optional)"
 msgstr ""
 
@@ -331,7 +331,7 @@ msgstr ""
 msgid "Didn't get the confirmation email?"
 msgstr ""
 
-#: app/Controllers/InstanceController.php:303
+#: app/Controllers/InstanceController.php:367
 msgid "Disk full (max :size MB): this instance no longer saves. Delete some files to free space."
 msgstr ""
 
@@ -347,7 +347,7 @@ msgstr ""
 msgid "Disk usage"
 msgstr ""
 
-#: views/pages/dashboard.php:65 views/pages/dashboard.php:127 views/pages/auth/register.php:20
+#: views/pages/dashboard.php:65 views/pages/dashboard.php:129 views/pages/auth/register.php:20
 msgid "DOS keyboard"
 msgstr ""
 
@@ -355,11 +355,15 @@ msgstr ""
 msgid "DOSBox runs right in your browser, full screen. Nothing to install."
 msgstr ""
 
+#: views/components/instance-card.php:67 views/pages/dashboard.php:104
+msgid "Download backup"
+msgstr ""
+
 #: views/pages/play.php:16
 msgid "Drag your finger to move the pointer, tap to click"
 msgstr ""
 
-#: views/pages/dashboard.php:167
+#: views/pages/dashboard.php:171
 msgid "Drop .zip files here or click to choose"
 msgstr ""
 
@@ -499,7 +503,7 @@ msgstr ""
 msgid "Instance deleted."
 msgstr ""
 
-#: app/Controllers/InstanceController.php:295 app/Controllers/InstanceController.php:296
+#: app/Controllers/InstanceController.php:359 app/Controllers/InstanceController.php:360
 msgid "Instance paused"
 msgstr ""
 
@@ -527,7 +531,7 @@ msgstr ""
 msgid "Invalid CPU profile."
 msgstr ""
 
-#: app/Controllers/InstanceController.php:253
+#: app/Controllers/InstanceController.php:266 app/Controllers/InstanceController.php:308 app/Controllers/InstanceController.php:319 app/Controllers/InstanceController.php:328
 msgid "Invalid disk data."
 msgstr ""
 
@@ -627,7 +631,7 @@ msgstr ""
 msgid "My instances"
 msgstr ""
 
-#: views/pages/dashboard.php:8 views/pages/dashboard.php:52 views/pages/dashboard.php:107 views/pages/auth/register.php:5 views/pages/admin/index.php:88 views/pages/account.php:16 views/pages/legal/cookies.php:19
+#: views/pages/dashboard.php:8 views/pages/dashboard.php:52 views/pages/dashboard.php:109 views/pages/auth/register.php:5 views/pages/admin/index.php:88 views/pages/account.php:16 views/pages/legal/cookies.php:19
 msgid "Name"
 msgstr ""
 
@@ -655,7 +659,7 @@ msgstr ""
 msgid "No account yet?"
 msgstr ""
 
-#: app/Controllers/InstanceController.php:216
+#: app/Controllers/InstanceController.php:218
 msgid "No changes to save"
 msgstr ""
 
@@ -683,7 +687,7 @@ msgstr ""
 msgid "One or more .zip archives: their content is extracted into C:. Max :size MB in total."
 msgstr ""
 
-#: app/Controllers/InstanceController.php:275
+#: app/Controllers/InstanceController.php:288
 msgid "Only .zip files can be uploaded."
 msgstr ""
 
@@ -811,12 +815,12 @@ msgstr ""
 msgid "Purposes and legal bases"
 msgstr ""
 
-#: app/Controllers/InstanceController.php:213
+#: app/Controllers/InstanceController.php:215
 msgid "Ready"
 msgstr ""
 
 #: views/pages/legal/privacy.php:79
-msgid "receive your data in a structured, commonly used, machine-readable format (the disks can also be downloaded as a .jsdos archive from the instance tools);"
+msgid "receive your data in a structured, commonly used, machine-readable format (each disk can be downloaded as a .zip with «Download backup» in the instance settings);"
 msgstr ""
 
 #: views/pages/legal/privacy.php:76
@@ -855,7 +859,7 @@ msgstr ""
 msgid "Retry"
 msgstr ""
 
-#: views/pages/dashboard.php:149 views/pages/admin/index.php:67 views/pages/account.php:38 views/pages/play.php:13
+#: views/pages/dashboard.php:152 views/pages/admin/index.php:67 views/pages/account.php:38 views/pages/play.php:13
 msgid "Save"
 msgstr ""
 
@@ -863,7 +867,7 @@ msgstr ""
 msgid "Save & exit"
 msgstr ""
 
-#: app/Controllers/InstanceController.php:217
+#: app/Controllers/InstanceController.php:219
 msgid "Save failed!"
 msgstr ""
 
@@ -871,11 +875,11 @@ msgstr ""
 msgid "Save settings"
 msgstr ""
 
-#: app/Controllers/InstanceController.php:215
+#: app/Controllers/InstanceController.php:217
 msgid "Saved at :time"
 msgstr ""
 
-#: app/Controllers/InstanceController.php:214
+#: app/Controllers/InstanceController.php:216
 msgid "Saving disk…"
 msgstr ""
 
@@ -923,7 +927,7 @@ msgstr ""
 msgid "Show or hide the system mouse cursor over DOS"
 msgstr ""
 
-#: views/pages/dashboard.php:76 views/pages/dashboard.php:138
+#: views/pages/dashboard.php:76 views/pages/dashboard.php:140
 msgid "Show the system cursor"
 msgstr ""
 
@@ -951,7 +955,7 @@ msgstr ""
 msgid "Sort by"
 msgstr ""
 
-#: views/pages/dashboard.php:144
+#: views/pages/dashboard.php:146
 msgid "Speed and keyboard apply from the next boot. Close the instance before changing them."
 msgstr ""
 
@@ -959,7 +963,7 @@ msgstr ""
 msgid "Spin up your own DOS machines, each with its own C: drive."
 msgstr ""
 
-#: views/pages/dashboard.php:80 views/pages/dashboard.php:142
+#: views/pages/dashboard.php:80 views/pages/dashboard.php:144
 msgid "Start in full screen"
 msgstr ""
 
@@ -999,7 +1003,7 @@ msgstr ""
 msgid "The administrators of the service, authorised and bound to confidentiality, to the extent needed to run it. They can see account data, instance names and disk usage; they do not open the content of your disks unless this is necessary for security, to comply with the law, or at your request."
 msgstr ""
 
-#: views/pages/dashboard.php:171
+#: views/pages/dashboard.php:175
 msgid "The content of the zips is added to C:. Files already on the disk are never overwritten. Close the instance before adding files. Max :size MB in total."
 msgstr ""
 
@@ -1043,7 +1047,7 @@ msgstr ""
 msgid "The image is too large (max :size KB)."
 msgstr ""
 
-#: views/components/instance-card.php:61 views/components/instance-card.php:66 views/pages/admin/index.php:103
+#: views/components/instance-card.php:62 views/components/instance-card.php:69 views/pages/admin/index.php:103
 msgid "The instance \":name\" and its disk will be deleted forever."
 msgstr ""
 
@@ -1103,11 +1107,11 @@ msgstr ""
 msgid "This email is already registered."
 msgstr ""
 
-#: app/Controllers/InstanceController.php:297
+#: app/Controllers/InstanceController.php:361
 msgid "This instance has been paused by an administrator and cannot be started right now. Its disk is kept safe."
 msgstr ""
 
-#: app/Controllers/InstanceController.php:87 app/Controllers/InstanceController.php:133 app/Controllers/InstanceController.php:230 app/Controllers/InstanceController.php:241
+#: app/Controllers/InstanceController.php:87 app/Controllers/InstanceController.php:133 app/Controllers/InstanceController.php:243 app/Controllers/InstanceController.php:254 app/Controllers/InstanceController.php:303
 msgid "This instance is paused."
 msgstr ""
 
@@ -1143,7 +1147,7 @@ msgstr ""
 msgid "Upload"
 msgstr ""
 
-#: app/Controllers/InstanceController.php:272
+#: app/Controllers/InstanceController.php:285
 msgid "Upload of \":file\" failed (is it too large?)."
 msgstr ""
 
@@ -1303,7 +1307,7 @@ msgstr ""
 msgid "Your disk is saved on the server automatically and when you leave."
 msgstr ""
 
-#: app/Controllers/InstanceController.php:219
+#: app/Controllers/InstanceController.php:221
 msgid "Your latest changes may not be saved yet."
 msgstr ""
 

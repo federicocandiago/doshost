@@ -58,10 +58,13 @@ $state = $instance->diskState(); ?>
                                 'show_cursor' => (bool) $instance->show_cursor,
                                 'start_fullscreen' => (bool) $instance->start_fullscreen,
                                 'deleteAction' => url("/instances/{$instance->uuid}/delete"),
+                                'backupUrl' => url("/instances/{$instance->uuid}/backup"),
                                 'deleteText' => __('The instance ":name" and its disk will be deleted forever.', ['name' => $instance->name]),
                             ], JSON_UNESCAPED_UNICODE)) ?>"><?= component('icon', ['name' => 'gear']) ?></button>
                 <?php endif ?>
                 <?php if ($instance->isSuspended()): ?>
+                    <a class="btn btn-outline-light btn-icon" href="<?= e(url("/instances/{$instance->uuid}/backup")) ?>" download
+                       title="<?= e(__('Download backup')) ?>" aria-label="<?= e(__('Download backup')) ?>"><?= component('icon', ['name' => 'download']) ?></a>
                     <button class="btn btn-outline-danger"
                             data-confirm="<?= e(__('The instance ":name" and its disk will be deleted forever.', ['name' => $instance->name])) ?>"
                             data-action="<?= base_url() ?>/instances/<?= e($instance->uuid) ?>/delete"><?= e(__('Delete')) ?></button>
