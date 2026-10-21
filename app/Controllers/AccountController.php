@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Core\Auth;
+use App\Core\Throttle;
 use App\Core\Request;
 use App\Core\Response;
 use App\Core\Session;
@@ -92,10 +93,14 @@ final class AccountController extends Controller
     {
         $user = auth();
         $new = (string) $request->input('password', '');
+        if ($blocked = $this->passwordBlocked('current_password')) {
+            return $blocked;
+        }
 
         $errors = [];
         if (!password_verify((string) $request->input('current_password', ''), (string) $user->password)) {
             $errors['current_password'] = __('The current password is wrong.');
+            $this->passwordFailed();
         }
         if (mb_strlen($new) < 8) {
             $errors['password'] = __('The password must be at least 8 characters.');
@@ -107,6 +112,7 @@ final class AccountController extends Controller
         }
 
         $user->update(['password' => password_hash($new, PASSWORD_DEFAULT)]);
+        Throttle::clear('password|' . $user->id);
         Session::regenerate();
 
         return $this->ok(__('Password changed.'));
@@ -115,7 +121,11 @@ final class AccountController extends Controller
     public function destroy(Request $request): Response
     {
         $user = auth();
+        if ($blocked = $this->passwordBlocked('confirm_password')) {
+            return $blocked;
+        }
         if (!password_verify((string) $request->input('confirm_password', ''), (string) $user->password)) {
+            $this->passwordFailed();
             return $this->fail(__('Please check the form.'), ['confirm_password' => __('The current password is wrong.')]);
         }
         if ($user->isAdmin() && User::count('is_admin = 1') <= 1) {
@@ -128,5 +138,22 @@ final class AccountController extends Controller
         Session::flash('success', __('Your account has been deleted. Goodbye!'));
 
         return $this->ok('', ['redirect' => '/']);
+    }
+
+    /** Wrong current passwords: THROTTLE_PASSWORD_ATTEMPTS per account, then a pause of THROTTLE_PASSWORD_MINUTES. */
+    private function passwordBlocked(string $field): ?Response
+    {
+        $wait = Throttle::blocked('password|' . auth()->id, Throttle::limit('PASSWORD_ATTEMPTS', 5));
+        if ($wait === null) {
+            return null;
+        }
+        $message = __('Too many wrong passwords: try again in :min minutes.', ['min' => Throttle::minutes($wait)]);
+
+        return $this->fail($message, [$field => $message], 429);
+    }
+
+    private function passwordFailed(): void
+    {
+        Throttle::hit('password|' . auth()->id, Throttle::limit('PASSWORD_MINUTES', 15) * 60);
     }
 }

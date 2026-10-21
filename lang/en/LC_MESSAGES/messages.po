@@ -75,7 +75,7 @@ msgstr ""
 msgid "Acceptable use"
 msgstr ""
 
-#: views/pages/legal/privacy.php:75
+#: views/pages/legal/privacy.php:76
 msgid "Access"
 msgstr ""
 
@@ -83,7 +83,7 @@ msgstr ""
 msgid "Access denied"
 msgstr ""
 
-#: app/Controllers/AuthController.php:112
+#: app/Controllers/AuthController.php:127
 msgid "Account created, but the confirmation email could not be sent. Try again from «Need a new link?»."
 msgstr ""
 
@@ -95,7 +95,7 @@ msgstr ""
 msgid "Account suspended"
 msgstr ""
 
-#: views/pages/legal/privacy.php:65
+#: views/pages/legal/privacy.php:66
 msgid "Account, profile and service data: as long as your account exists. When you delete your account (or an administrator deletes it), your data, profile picture and all disks are deleted immediately."
 msgstr ""
 
@@ -123,7 +123,7 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
-#: app/Controllers/AuthController.php:115
+#: app/Controllers/AuthController.php:130
 msgid "Almost done! We sent a confirmation link to :email. Check the spam folder too."
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr ""
 msgid "Already registered?"
 msgstr ""
 
-#: views/pages/legal/privacy.php:55
+#: views/pages/legal/privacy.php:56
 msgid "Any provider hosting our servers, acting as data processor under a contract pursuant to Article 28 GDPR."
 msgstr ""
 
@@ -139,7 +139,7 @@ msgstr ""
 msgid "Are you sure?"
 msgstr ""
 
-#: views/pages/legal/privacy.php:78
+#: views/pages/legal/privacy.php:79
 msgid "ask us to limit the processing in the cases provided by Article 18;"
 msgstr ""
 
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Change password"
 msgstr ""
 
-#: views/pages/legal/privacy.php:92
+#: views/pages/legal/privacy.php:93
 msgid "Changes to this policy"
 msgstr ""
 
@@ -203,7 +203,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: views/pages/legal/privacy.php:40
+#: views/pages/legal/privacy.php:41
 msgid "Complying with legal obligations and requests from authorities."
 msgstr ""
 
@@ -215,7 +215,7 @@ msgstr ""
 msgid "Confirm with your password"
 msgstr ""
 
-#: app/Controllers/AuthController.php:142 views/pages/auth/resend.php:2
+#: app/Controllers/AuthController.php:157 views/pages/auth/resend.php:2
 msgid "Confirm your email"
 msgstr ""
 
@@ -239,7 +239,7 @@ msgstr ""
 msgid "Cookies we use"
 msgstr ""
 
-#: views/pages/legal/privacy.php:76
+#: views/pages/legal/privacy.php:77
 msgid "correct inaccurate data (you can change your name and preferences from \"My account\");"
 msgstr ""
 
@@ -251,7 +251,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: app/Controllers/AuthController.php:50 views/components/navbar.php:36 views/pages/auth/register.php:2 views/pages/auth/register.php:36 views/pages/home.php:12
+#: app/Controllers/AuthController.php:60 views/components/navbar.php:36 views/pages/auth/register.php:2 views/pages/auth/register.php:36 views/pages/home.php:12
 msgid "Create account"
 msgstr ""
 
@@ -259,7 +259,7 @@ msgstr ""
 msgid "Create one"
 msgstr ""
 
-#: views/pages/legal/privacy.php:36
+#: views/pages/legal/privacy.php:37
 msgid "Creating and managing your account, signing you in, providing the instances and keeping their disks."
 msgstr ""
 
@@ -279,7 +279,7 @@ msgstr ""
 msgid "Data controller"
 msgstr ""
 
-#: views/pages/legal/privacy.php:61
+#: views/pages/legal/privacy.php:62
 msgid "Data is stored on our own servers, located in :location. The service does not use external content networks, analytics or third-party services. If data is ever transferred outside the European Economic Area, this will only happen on the basis of an adequacy decision or appropriate safeguards such as the Standard Contractual Clauses (Articles 45–46 GDPR)."
 msgstr ""
 
@@ -299,7 +299,7 @@ msgstr ""
 msgid "Default limit. Users with a personal limit are not affected."
 msgstr ""
 
-#: views/pages/legal/privacy.php:42
+#: views/pages/legal/privacy.php:43
 msgid "Defending our rights in legal proceedings."
 msgstr ""
 
@@ -319,7 +319,7 @@ msgstr ""
 msgid "Delete my account"
 msgstr ""
 
-#: views/pages/legal/privacy.php:66
+#: views/pages/legal/privacy.php:67
 msgid "Deleted instances: the disk and its previous version are deleted immediately."
 msgstr ""
 
@@ -379,11 +379,11 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: app/Controllers/AuthController.php:135
+#: app/Controllers/AuthController.php:150
 msgid "Email confirmed. Welcome aboard, :name!"
 msgstr ""
 
-#: app/Controllers/AuthController.php:35
+#: app/Controllers/AuthController.php:45
 msgid "Email not confirmed yet."
 msgstr ""
 
@@ -411,7 +411,7 @@ msgstr ""
 msgid "Enter the address you signed up with and we'll send you a new confirmation link."
 msgstr ""
 
-#: views/pages/legal/privacy.php:77
+#: views/pages/legal/privacy.php:78
 msgid "Erasure"
 msgstr ""
 
@@ -443,7 +443,7 @@ msgstr ""
 msgid "Go to my instances"
 msgstr ""
 
-#: views/pages/legal/privacy.php:77
+#: views/pages/legal/privacy.php:78
 msgid "have your data deleted (you can delete your account yourself from \"My account\");"
 msgstr ""
 
@@ -451,7 +451,7 @@ msgstr ""
 msgid "Hi :name,"
 msgstr ""
 
-#: views/pages/legal/privacy.php:63
+#: views/pages/legal/privacy.php:64
 msgid "How long we keep it"
 msgstr ""
 
@@ -467,7 +467,7 @@ msgstr ""
 msgid "I accept the <a href=\":terms\" target=\"_blank\">Terms of Service</a> and the <a href=\":privacy\" target=\"_blank\">Privacy Policy</a>."
 msgstr ""
 
-#: app/Controllers/AuthController.php:164
+#: app/Controllers/AuthController.php:185
 msgid "If :email is waiting for confirmation, a new link is on its way. Check the spam folder too."
 msgstr ""
 
@@ -479,7 +479,7 @@ msgstr ""
 msgid "If you didn't create an account, just ignore this email."
 msgstr ""
 
-#: views/pages/legal/privacy.php:87
+#: views/pages/legal/privacy.php:88
 msgid "In the event of a personal data breach we will notify the supervisory authority and, where required, the people concerned, as provided by Articles 33 and 34 GDPR."
 msgstr ""
 
@@ -535,15 +535,15 @@ msgstr ""
 msgid "Invalid disk data."
 msgstr ""
 
-#: app/Controllers/AuthController.php:88 app/Controllers/AccountController.php:42 app/Controllers/InstanceController.php:46 app/Controllers/InstanceController.php:106
+#: app/Controllers/AuthController.php:103 app/Controllers/AccountController.php:43 app/Controllers/InstanceController.php:46 app/Controllers/InstanceController.php:106
 msgid "Invalid keyboard layout."
 msgstr ""
 
-#: app/Controllers/AuthController.php:85 app/Controllers/AccountController.php:39
+#: app/Controllers/AuthController.php:100 app/Controllers/AccountController.php:40
 msgid "Invalid language."
 msgstr ""
 
-#: views/pages/legal/privacy.php:49
+#: views/pages/legal/privacy.php:50
 msgid "Is providing data mandatory?"
 msgstr ""
 
@@ -579,19 +579,19 @@ msgstr ""
 msgid "Last updated: :date"
 msgstr ""
 
-#: views/pages/legal/cookies.php:40 views/pages/legal/privacy.php:34
+#: views/pages/legal/cookies.php:40 views/pages/legal/privacy.php:35
 msgid "Legal basis"
 msgstr ""
 
-#: views/pages/legal/privacy.php:41
+#: views/pages/legal/privacy.php:42
 msgid "Legal obligation (Art. 6(1)(c) GDPR)."
 msgstr ""
 
-#: views/pages/legal/privacy.php:39
+#: views/pages/legal/privacy.php:40
 msgid "Legitimate interest of the controller (Art. 6(1)(f) GDPR) in protecting the service and its users."
 msgstr ""
 
-#: views/pages/legal/privacy.php:43
+#: views/pages/legal/privacy.php:44
 msgid "Legitimate interest of the controller (Art. 6(1)(f) GDPR)."
 msgstr ""
 
@@ -611,7 +611,7 @@ msgstr ""
 msgid "Method not allowed"
 msgstr ""
 
-#: views/pages/legal/privacy.php:89
+#: views/pages/legal/privacy.php:90
 msgid "Minors"
 msgstr ""
 
@@ -623,7 +623,7 @@ msgstr ""
 msgid "Mouse cursor"
 msgstr ""
 
-#: app/Controllers/AccountController.php:21 views/components/navbar.php:21 views/pages/account.php:6
+#: app/Controllers/AccountController.php:22 views/components/navbar.php:21 views/pages/account.php:6
 msgid "My account"
 msgstr ""
 
@@ -635,7 +635,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: views/pages/legal/privacy.php:50
+#: views/pages/legal/privacy.php:51
 msgid "Name, email address and password are necessary to create an account: without them we cannot provide the service. Profile picture and instance descriptions are optional."
 msgstr ""
 
@@ -667,15 +667,15 @@ msgstr ""
 msgid "No instances yet."
 msgstr ""
 
-#: views/pages/legal/privacy.php:80
+#: views/pages/legal/privacy.php:81
 msgid "object at any time to processing based on our legitimate interest, for reasons related to your particular situation."
 msgstr ""
 
-#: views/pages/legal/privacy.php:80
+#: views/pages/legal/privacy.php:81
 msgid "Objection"
 msgstr ""
 
-#: views/pages/legal/privacy.php:75
+#: views/pages/legal/privacy.php:76
 msgid "obtain confirmation of whether we process your data and a copy of it;"
 msgstr ""
 
@@ -719,7 +719,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: app/Controllers/AccountController.php:112
+#: app/Controllers/AccountController.php:118
 msgid "Password changed."
 msgstr ""
 
@@ -735,7 +735,7 @@ msgstr ""
 msgid "Paused by an administrator."
 msgstr ""
 
-#: views/pages/legal/privacy.php:37
+#: views/pages/legal/privacy.php:38
 msgid "Performance of a contract (Art. 6(1)(b) GDPR): the Terms of Service you accept when signing up."
 msgstr ""
 
@@ -743,27 +743,27 @@ msgstr ""
 msgid "Personal data we process"
 msgstr ""
 
-#: app/Controllers/AdminController.php:62 app/Controllers/AuthController.php:94 app/Controllers/AuthController.php:150 app/Controllers/AccountController.php:45 app/Controllers/AccountController.php:106 app/Controllers/AccountController.php:119 app/Controllers/InstanceController.php:52 app/Controllers/InstanceController.php:60 app/Controllers/InstanceController.php:65 app/Controllers/InstanceController.php:109 app/Controllers/InstanceController.php:139 app/Controllers/InstanceController.php:145 app/Controllers/InstanceController.php:149
+#: app/Controllers/AdminController.php:62 app/Controllers/AuthController.php:109 app/Controllers/AuthController.php:165 app/Controllers/AccountController.php:46 app/Controllers/AccountController.php:111 app/Controllers/AccountController.php:129 app/Controllers/InstanceController.php:52 app/Controllers/InstanceController.php:60 app/Controllers/InstanceController.php:65 app/Controllers/InstanceController.php:109 app/Controllers/InstanceController.php:139 app/Controllers/InstanceController.php:145 app/Controllers/InstanceController.php:149
 msgid "Please check the form."
 msgstr ""
 
-#: app/Controllers/AccountController.php:58
+#: app/Controllers/AccountController.php:59
 msgid "Please choose an image."
 msgstr ""
 
-#: app/Controllers/AuthController.php:34
+#: app/Controllers/AuthController.php:44
 msgid "Please confirm your email first: open the link we sent you (check the spam folder too)."
 msgstr ""
 
-#: app/Controllers/AuthController.php:75 app/Controllers/AuthController.php:150
+#: app/Controllers/AuthController.php:90 app/Controllers/AuthController.php:165
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: app/Controllers/AuthController.php:72 app/Controllers/AccountController.php:36
+#: app/Controllers/AuthController.php:87 app/Controllers/AccountController.php:37
 msgid "Please enter your name."
 msgstr ""
 
-#: views/pages/legal/privacy.php:79
+#: views/pages/legal/privacy.php:80
 msgid "Portability"
 msgstr ""
 
@@ -791,27 +791,27 @@ msgstr ""
 msgid "profile picture (re-encoded by our system, which removes any embedded metadata such as location), preferred language and DOS keyboard layout."
 msgstr ""
 
-#: app/Controllers/AccountController.php:81
+#: app/Controllers/AccountController.php:82
 msgid "Profile picture removed."
 msgstr ""
 
-#: app/Controllers/AccountController.php:73
+#: app/Controllers/AccountController.php:74
 msgid "Profile picture updated."
 msgstr ""
 
-#: app/Controllers/AccountController.php:51
+#: app/Controllers/AccountController.php:52
 msgid "Profile updated."
 msgstr ""
 
-#: views/pages/legal/privacy.php:56
+#: views/pages/legal/privacy.php:57
 msgid "Public authorities, only when required by law."
 msgstr ""
 
-#: views/pages/legal/cookies.php:19 views/pages/legal/privacy.php:34
+#: views/pages/legal/cookies.php:19 views/pages/legal/privacy.php:35
 msgid "Purpose"
 msgstr ""
 
-#: views/pages/legal/privacy.php:31
+#: views/pages/legal/privacy.php:32
 msgid "Purposes and legal bases"
 msgstr ""
 
@@ -819,11 +819,11 @@ msgstr ""
 msgid "Ready"
 msgstr ""
 
-#: views/pages/legal/privacy.php:79
+#: views/pages/legal/privacy.php:80
 msgid "receive your data in a structured, commonly used, machine-readable format (each disk can be downloaded as a .zip with «Download backup» in the instance settings);"
 msgstr ""
 
-#: views/pages/legal/privacy.php:76
+#: views/pages/legal/privacy.php:77
 msgid "Rectification"
 msgstr ""
 
@@ -831,7 +831,7 @@ msgstr ""
 msgid "Registration"
 msgstr ""
 
-#: app/Controllers/AuthController.php:61
+#: app/Controllers/AuthController.php:71
 msgid "Registration is currently closed."
 msgstr ""
 
@@ -847,7 +847,7 @@ msgstr ""
 msgid "Repeat password"
 msgstr ""
 
-#: views/pages/legal/privacy.php:78
+#: views/pages/legal/privacy.php:79
 msgid "Restriction"
 msgstr ""
 
@@ -883,11 +883,15 @@ msgstr ""
 msgid "Saving disk…"
 msgstr ""
 
-#: views/pages/legal/privacy.php:85
+#: views/pages/legal/privacy.php:86
 msgid "Security"
 msgstr ""
 
-#: views/pages/legal/privacy.php:38
+#: views/pages/legal/privacy.php:27
+msgid "Security counters"
+msgstr ""
+
+#: views/pages/legal/privacy.php:39
 msgid "Security of the service, preventing abuse, enforcing the Terms of Service (e.g. pausing an account or instance)."
 msgstr ""
 
@@ -895,7 +899,7 @@ msgstr ""
 msgid "Send a new link"
 msgstr ""
 
-#: views/pages/legal/privacy.php:69
+#: views/pages/legal/privacy.php:70
 msgid "Server backups, if any, are overwritten in the normal backup cycle."
 msgstr ""
 
@@ -903,7 +907,7 @@ msgstr ""
 msgid "Service data"
 msgstr ""
 
-#: views/pages/legal/privacy.php:68
+#: views/pages/legal/privacy.php:69
 msgid "Session data: until you sign out or the browser session ends."
 msgstr ""
 
@@ -931,7 +935,7 @@ msgstr ""
 msgid "Show the system cursor"
 msgstr ""
 
-#: app/Controllers/AuthController.php:20 views/components/navbar.php:34 views/pages/auth/resend.php:9 views/pages/auth/login.php:2 views/pages/auth/login.php:7 views/pages/auth/register.php:39 views/pages/home.php:10
+#: app/Controllers/AuthController.php:21 views/components/navbar.php:34 views/pages/auth/resend.php:9 views/pages/auth/login.php:2 views/pages/auth/login.php:7 views/pages/auth/register.php:39 views/pages/home.php:10
 msgid "Sign in"
 msgstr ""
 
@@ -979,7 +983,7 @@ msgstr ""
 msgid "Tap to start"
 msgstr ""
 
-#: views/pages/legal/privacy.php:27
+#: views/pages/legal/privacy.php:28
 msgid "Technical data"
 msgstr ""
 
@@ -999,7 +1003,7 @@ msgstr ""
 msgid "Thanks for signing up to :app! Open this link to confirm your email address and start using your DOS machines:"
 msgstr ""
 
-#: views/pages/legal/privacy.php:54
+#: views/pages/legal/privacy.php:55
 msgid "The administrators of the service, authorised and bound to confidentiality, to the extent needed to run it. They can see account data, instance names and disk usage; they do not open the content of your disks unless this is necessary for security, to comply with the law, or at your request."
 msgstr ""
 
@@ -1011,7 +1015,7 @@ msgstr ""
 msgid "The cookie is marked HttpOnly (not readable by scripts) and SameSite=Lax (not sent on requests started by other sites), and it is sent only over HTTPS when the site uses it. It does not contain personal data: only a random identifier of your session."
 msgstr ""
 
-#: app/Controllers/AccountController.php:98 app/Controllers/AccountController.php:119
+#: app/Controllers/AccountController.php:102 app/Controllers/AccountController.php:129
 msgid "The current password is wrong."
 msgstr ""
 
@@ -1031,7 +1035,7 @@ msgstr ""
 msgid "The disk is almost full (:pct%). When it reaches 100% the instance stops saving."
 msgstr ""
 
-#: app/Controllers/AuthController.php:160
+#: app/Controllers/AuthController.php:181
 msgid "The email could not be sent right now. Please try again later."
 msgstr ""
 
@@ -1043,7 +1047,7 @@ msgstr ""
 msgid "The files exceed the maximum disk size of :size MB."
 msgstr ""
 
-#: app/Controllers/AccountController.php:65
+#: app/Controllers/AccountController.php:66
 msgid "The image is too large (max :size KB)."
 msgstr ""
 
@@ -1059,11 +1063,11 @@ msgstr ""
 msgid "the names and descriptions of your instances, their settings and the content of their virtual disks (files you upload or create inside the emulator)."
 msgstr ""
 
-#: app/Controllers/AuthController.php:80 app/Controllers/AccountController.php:101
+#: app/Controllers/AuthController.php:95 app/Controllers/AccountController.php:106
 msgid "The password must be at least 8 characters."
 msgstr ""
 
-#: app/Controllers/AuthController.php:82 app/Controllers/AccountController.php:103
+#: app/Controllers/AuthController.php:97 app/Controllers/AccountController.php:108
 msgid "The passwords do not match."
 msgstr ""
 
@@ -1075,7 +1079,7 @@ msgstr ""
 msgid "The service cannot reach its database right now. Please try again in a few minutes."
 msgstr ""
 
-#: views/pages/legal/privacy.php:90
+#: views/pages/legal/privacy.php:91
 msgid "The service is not intended for children under 14 (or the higher age of digital consent required in your country). If you believe a minor has registered without authorisation, please contact us and we will delete the account."
 msgstr ""
 
@@ -1087,15 +1091,19 @@ msgstr ""
 msgid "The user :email and all their instances will be deleted."
 msgstr ""
 
-#: views/pages/legal/privacy.php:27
+#: views/pages/legal/privacy.php:28
 msgid "the web server may record standard access logs (IP address, date and time, requested page, browser type) for security purposes. The application itself does not store your IP address."
+msgstr ""
+
+#: app/Controllers/AuthController.php:75
+msgid "There have been too many sign-up attempts on :app: please try again later."
 msgstr ""
 
 #: views/pages/legal/cookies.php:38
 msgid "These data never leave your device and are not used to track you."
 msgstr ""
 
-#: app/Controllers/AuthController.php:129
+#: app/Controllers/AuthController.php:144
 msgid "This confirmation link is not valid or has already been used."
 msgstr ""
 
@@ -1103,7 +1111,7 @@ msgstr ""
 msgid "This deletes your account, all your instances and their disks. It cannot be undone."
 msgstr ""
 
-#: app/Controllers/AuthController.php:77
+#: app/Controllers/AuthController.php:92
 msgid "This email is already registered."
 msgstr ""
 
@@ -1119,8 +1127,24 @@ msgstr ""
 msgid "This policy explains how :app processes your personal data, in accordance with Regulation (EU) 2016/679 (General Data Protection Regulation, \"GDPR\") and the applicable national law. How we use cookies is described in the separate Cookie Policy."
 msgstr ""
 
-#: views/pages/legal/privacy.php:82
+#: views/pages/legal/privacy.php:83
 msgid "To exercise your rights write to :mail. We will reply without undue delay and in any case within one month, which may be extended by two further months for complex requests (Article 12 GDPR). We may ask you to confirm your identity."
+msgstr ""
+
+#: views/pages/legal/privacy.php:27
+msgid "to stop password guessing and abuse we count, for a short time, failed sign-ins and some requests per account. The counters are kept under a one-way hash of the account name, never with IP addresses, and are deleted when they expire."
+msgstr ""
+
+#: app/Controllers/AuthController.php:32
+msgid "Too many failed attempts for this account: try again in :min minutes."
+msgstr ""
+
+#: app/Controllers/AuthController.php:170
+msgid "Too many requests for this address: try again in :min minutes."
+msgstr ""
+
+#: app/Controllers/AccountController.php:150
+msgid "Too many wrong passwords: try again in :min minutes."
 msgstr ""
 
 #: views/pages/play.php:17
@@ -1135,7 +1159,7 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: views/pages/legal/privacy.php:73
+#: views/pages/legal/privacy.php:74
 msgid "Under Articles 15–22 GDPR you have the right to:"
 msgstr ""
 
@@ -1151,7 +1175,7 @@ msgstr ""
 msgid "Upload of \":file\" failed (is it too large?)."
 msgstr ""
 
-#: app/Controllers/AccountController.php:67
+#: app/Controllers/AccountController.php:68
 msgid "Use a JPG, PNG, GIF or WebP image."
 msgstr ""
 
@@ -1179,27 +1203,27 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
-#: views/pages/legal/privacy.php:86
+#: views/pages/legal/privacy.php:87
 msgid "We adopt technical and organisational measures appropriate to the risk (Article 32 GDPR), including: hashed passwords, protection against cross-site request forgery, session cookies not accessible to scripts, access control on every instance, re-encoding of uploaded images, and separation between the data of different users. No system is perfectly secure: keep your password private and a copy of important files."
 msgstr ""
 
-#: views/pages/legal/privacy.php:29
+#: views/pages/legal/privacy.php:30
 msgid "We do not ask for, and ask you not to upload, special categories of data (Article 9 GDPR) or data about criminal convictions. The content of your disks is your responsibility: do not store other people's personal data in it without a valid legal basis."
 msgstr ""
 
-#: views/pages/legal/privacy.php:47
+#: views/pages/legal/privacy.php:48
 msgid "We do not use your data for marketing, we do not sell it, and we do not carry out profiling or decisions based solely on automated processing within the meaning of Article 22 GDPR."
 msgstr ""
 
-#: views/pages/legal/privacy.php:93
+#: views/pages/legal/privacy.php:94
 msgid "We may update this policy, for example when the service changes. The date of the last update is shown at the top of the page; significant changes will be announced on the site."
 msgstr ""
 
-#: views/pages/legal/privacy.php:67
+#: views/pages/legal/privacy.php:68
 msgid "Web server access logs: at most :days days, unless needed to investigate a specific security incident."
 msgstr ""
 
-#: app/Controllers/AuthController.php:121
+#: app/Controllers/AuthController.php:136
 msgid "Welcome aboard, :name!"
 msgstr ""
 
@@ -1211,7 +1235,7 @@ msgstr ""
 msgid "When closed, the sign-up page is hidden and only existing users can sign in."
 msgstr ""
 
-#: views/pages/legal/privacy.php:60
+#: views/pages/legal/privacy.php:61
 msgid "Where your data is stored"
 msgstr ""
 
@@ -1219,15 +1243,15 @@ msgstr ""
 msgid "While you use an instance, the changes to drive C: are sent to the server every :min minutes, when you press Save and when you leave the page."
 msgstr ""
 
-#: views/pages/legal/privacy.php:52
+#: views/pages/legal/privacy.php:53
 msgid "Who can access your data"
 msgstr ""
 
-#: app/Controllers/AuthController.php:31
+#: app/Controllers/AuthController.php:40
 msgid "Wrong email or password."
 msgstr ""
 
-#: views/pages/legal/privacy.php:83
+#: views/pages/legal/privacy.php:84
 msgid "You also have the right to lodge a complaint with a supervisory authority, in particular in the Member State where you live or work. In Italy it is the Garante per la protezione dei dati personali (www.garanteprivacy.it)."
 msgstr ""
 
@@ -1239,7 +1263,7 @@ msgstr ""
 msgid "You are responsible for your credentials and for everything done with your account. Each account can create a limited number of instances."
 msgstr ""
 
-#: app/Controllers/AccountController.php:122
+#: app/Controllers/AccountController.php:132
 msgid "You are the only administrator: promote another user before deleting your account."
 msgstr ""
 
@@ -1275,7 +1299,7 @@ msgstr ""
 msgid "You have reached your instance limit."
 msgstr ""
 
-#: app/Controllers/AuthController.php:91
+#: app/Controllers/AuthController.php:106
 msgid "You must accept the terms of service."
 msgstr ""
 
@@ -1283,7 +1307,7 @@ msgstr ""
 msgid "Your account"
 msgstr ""
 
-#: app/Controllers/AccountController.php:128
+#: app/Controllers/AccountController.php:138
 msgid "Your account has been deleted. Goodbye!"
 msgstr ""
 
@@ -1299,7 +1323,7 @@ msgstr ""
 msgid "Your account, all your instances and their disks will be deleted forever. Continue?"
 msgstr ""
 
-#: views/pages/legal/privacy.php:58
+#: views/pages/legal/privacy.php:59
 msgid "Your data is not disclosed to anyone else and is never published."
 msgstr ""
 
@@ -1315,7 +1339,7 @@ msgstr ""
 msgid "Your own DOS machines in the browser. Create an instance, boot it, and your C: drive is saved for you."
 msgstr ""
 
-#: views/pages/legal/privacy.php:72
+#: views/pages/legal/privacy.php:73
 msgid "Your rights"
 msgstr ""
 

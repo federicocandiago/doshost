@@ -65,6 +65,14 @@ or `log` (writes the messages to `storage/logs/mail.log`, for development).
 Messages sent from a home connection or without SPF/DKIM for the sender domain often end up in spam, or are
 dropped: use your host's mail or a real SMTP account, with `MAIL_FROM_ADDRESS` on your own domain.
 
+## Rate limits
+
+`app/Core/Throttle.php` counts attempts per key in fixed windows, all configurable in `.env` (`THROTTLE_*`):
+wrong passwords at sign-in per account (5 in 15 minutes, then a pause), wrong current password when changing it or
+deleting the account, new confirmation emails per address, and sign-ups with a single counter for the whole site.
+No IP address is stored: keys are SHA-256 hashes, and expired counters are deleted along the way. A blocked request
+gets HTTP 429 and a message saying how long to wait.
+
 ## Translations
 
 Strings are in English in the code: `__('Hello, :name', ['name' => $n])`.

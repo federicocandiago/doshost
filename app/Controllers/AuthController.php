@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Core\Auth;
+use App\Core\Throttle;
 use App\Core\Request;
 use App\Core\Response;
 use App\Core\Session;
@@ -25,11 +26,20 @@ final class AuthController extends Controller
         $email = (string) $request->input('email', '');
         $password = (string) $request->input('password', '');
 
+        // brute force: THROTTLE_LOGIN_ATTEMPTS wrong passwords per account, then a pause of THROTTLE_LOGIN_MINUTES
+        $key = 'login|' . mb_strtolower(trim($email));
+        if ($wait = Throttle::blocked($key, Throttle::limit('LOGIN_ATTEMPTS', 5))) {
+            $message = __('Too many failed attempts for this account: try again in :min minutes.', ['min' => Throttle::minutes($wait)]);
+            return $this->fail($message, ['email' => $message], 429);
+        }
+
         $user = User::findByEmail($email);
         if ($user === null || !password_verify($password, (string) $user->password)) {
-            usleep(300_000); // slow down brute force a little
+            Throttle::hit($key, Throttle::limit('LOGIN_MINUTES', 15) * 60);
+            usleep(300_000);
             return $this->fail(__('Wrong email or password.'), ['email' => __('Wrong email or password.')]);
         }
+        Throttle::clear($key);
         if (email_verification_enabled() && !$user->isVerified()) {
             return $this->fail(__('Please confirm your email first: open the link we sent you (check the spam folder too).'), [
                 'email' => __('Email not confirmed yet.'),
@@ -60,6 +70,11 @@ final class AuthController extends Controller
         if (!registration_enabled()) {
             return $this->fail(__('Registration is currently closed.'), [], 403);
         }
+        // one counter for the whole site, no IP: THROTTLE_REGISTER_PER_HOUR attempts per hour
+        if (Throttle::blocked('register', Throttle::limit('REGISTER_PER_HOUR', 30))) {
+            return $this->fail(__('There have been too many sign-up attempts on :app: please try again later.', ['app' => env('APP_NAME')]), [], 429);
+        }
+        Throttle::hit('register', 3600);
 
         $name = (string) $request->input('name', '');
         $email = mb_strtolower((string) $request->input('email', ''));
@@ -149,6 +164,12 @@ final class AuthController extends Controller
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return $this->fail(__('Please check the form.'), ['email' => __('Please enter a valid email address.')]);
         }
+
+        $key = 'resend|' . $email;
+        if ($wait = Throttle::blocked($key, Throttle::limit('RESEND_PER_HOUR', 3))) {
+            return $this->fail(__('Too many requests for this address: try again in :min minutes.', ['min' => Throttle::minutes($wait)]), [], 429);
+        }
+        Throttle::hit($key, 3600);
 
         $user = User::findByEmail($email);
         $recent = $user?->verification_sent_at && strtotime((string) $user->verification_sent_at) > time() - 60;
